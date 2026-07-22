@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bugün Nasıl Hissediyorsun? 🤍</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.option{
+width:100%;
+margin:12px 0;
+padding:18px;
+font-size:20px;
+border:none;
+border-radius:18px;
+background:#EFC7D2;
+color:#8D6E63;
+cursor:pointer;
+transition:.3s;
+}
+
+.option:hover{
+background:#E7B8C7;
+}
+
+#message{
+margin-top:25px;
+padding:20px;
+border-radius:20px;
+background:#FFF8F4;
+color:#8D6E63;
+line-height:1.9;
+display:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🤍 Bugün Nasıl Hissediyorsun?</h1>
+
+<p>
+İçinden geleni seç.<br>
+Bal seni dinliyor. 🍯
+</p>
+
+<button class="option"
+onclick="showMessage('😊 Bugün yüzünün gülmesine çok sevindim.<br><br>Umarım bu mutluluk hep seninle kalır. 🤍')">
+😊 Mutluyum
+</button>
+
+<button class="option"
+onclick="showMessage('🥺 Geçecek...<br><br>Ben hep burada olacağım.<br><br>Biraz dinlen, kendine nazik davran. 🌸')">
+🥺 Biraz kötüyüm
+</button>
+
+<button class="option"
+onclick="showMessage('🫂 Bugün biraz dinlen olur mu?<br><br>Sen elinden gelenin en iyisini yapıyorsun.<br><br>Kendine de biraz şefkat göstermeyi unutma. 🍯')">
+🫂 Biraz desteğe ihtiyacım var
+</button>
+
+<button class="option"
+onclick="showMessage('🤍 Keşke şu an yanında olup sana kocaman sarılabilseydim sevgilim.<br><br>Kendini yalnız hissetme, ben hep seninleyim. 🤍')">
+🤍 Sarılmaya ihtiyacım var
+</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+function showMessage(text){
+document.getElementById("message").style.display="block";
+document.getElementById("message").innerHTML=text;
+}
+</script>
+
+</body>
+</html>
