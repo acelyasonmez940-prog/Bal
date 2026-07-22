@@ -40,6 +40,56 @@ display:none;
 </head>
 
 <body>
+    <div class="card">
+
+<h1>😊 Bugün Nasıl Hissediyorsun?</h1>
+
+<button class="option" onclick="showMessage('happy')">
+😊 Mutluyum
+</button>
+
+<button class="option" onclick="showMessage('sad')">
+🥺 Biraz kötüyüm
+</button>
+
+<button class="option" onclick="showMessage('tired')">
+😴 Çok yorgunum
+</button>
+
+<button class="option" onclick="showMessage('hug')">
+🤍 Sarılmaya ihtiyacım var
+</button>
+
+<div id="message"></div>
+
+<br>
+
+<a href="menu.html">← Menüye Dön</a>
+
+</div>
+
+<script>
+function showMessage(type){
+const box=document.getElementById("message");
+box.style.display="block";
+
+if(type==="happy"){
+box.innerHTML="😊 Bugün yüzünün gülmesine çok sevindim. Umarım bu mutluluk hep seninle kalır. 🤍";
+}
+
+if(type==="sad"){
+box.innerHTML="🥺 Geçecek... Ben hep burada olacağım. Biraz dinlen, kendine nazik davran. 🌸";
+}
+
+if(type==="tired"){
+box.innerHTML="😴 Bugün biraz dinlen olur mu? Sen elinden gelenin en iyisini yapıyorsun. Kendine de biraz şefkat göstermeyi unutma. 🍯";
+}
+
+if(type==="hug"){
+box.innerHTML="🤍 Keşke şu an yanında olup sana kocaman sarılabilseydim sevgilim. Kendini yalnız hissetme, ben hep seninleyim.";
+}
+}
+</script>
 
 <div class="card">
 
