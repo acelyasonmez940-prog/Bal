@@ -1,4 +1,4 @@
-const CACHE_NAME = "bal-v1";
+const CACHE_NAME = "bal-v2";
 
 const urlsToCache = [
   "/",
