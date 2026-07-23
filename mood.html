@@ -36,24 +36,33 @@ line-height:1.9;
 display:none;
 }
 </style>
-
 </head>
 
 <body>
-    <div class="card">
 
-<h1>😊 Bugün Nasıl Hissediyorsun?</h1>
+<div class="card">
+
+<h1>🤍 Bugün Nasıl Hissediyorsun?</h1>
+
+<p>
+İçinden geleni seç.<br>
+Bal seni dinliyor. 🍯
+</p>
 
 <button class="option" onclick="showMessage('happy')">
+😊 Mutluyum
 </button>
 
 <button class="option" onclick="showMessage('sad')">
+🥺 Biraz kötüyüm
 </button>
 
 <button class="option" onclick="showMessage('tired')">
+😴 Çok yorgunum
 </button>
 
 <button class="option" onclick="showMessage('hug')">
+🤍 Sarılmaya ihtiyacım var
 </button>
 
 <div id="message"></div>
@@ -66,6 +75,7 @@ display:none;
 
 <script>
 function showMessage(type){
+
 const box=document.getElementById("message");
 box.style.display="block";
 
@@ -78,52 +88,13 @@ box.innerHTML="🥺 Geçecek... Ben hep burada olacağım. Biraz dinlen, kendine
 }
 
 if(type==="tired"){
-box.innerHTML="😴 Bugün biraz dinlen olur mu? Sen elinden gelenin en iyisini yapıyorsun. Kendine de biraz şefkat göstermeyi unutma. 🍯";
+box.innerHTML="😴 Bugün biraz mola verme günü olsun. Sen her zaman elinden gelenin en iyisini yapıyorsun. 🍯";
 }
 
 if(type==="hug"){
 box.innerHTML="🤍 Keşke şu an yanında olup sana kocaman sarılabilseydim sevgilim. Kendini yalnız hissetme, ben hep seninleyim.";
 }
-}
-</script>
 
-
-
-<h1>🤍 Bugün Nasıl Hissediyorsun?</h1>
-
-<p>
-İçinden geleni seç.<br>
-Bal seni dinliyor. 🍯
-</p>
-
-<button class="option"
-onclick="showMessage('😊 Bugün yüzünün gülmesine çok sevindim.<br><br>Umarım bu mutluluk hep seninle kalır. 🤍')">
-😊 Mutluyum
-</button>
-
-<button class="option"
-onclick="showMessage('🥺 Geçecek...<br><br>Ben hep burada olacağım.<br><br>Biraz dinlen, kendine nazik davran. 🌸')">
-🥺 Biraz kötüyüm
-</button>
-
-<button class="option"
-onclick="showMessage('🫂 Bugün biraz dinlen olur mu?<br><br>Sen elinden gelenin en iyisini yapıyorsun.<br><br>Kendine de biraz şefkat göstermeyi unutma. 🍯')">
-🫂 Biraz desteğe ihtiyacım var
-</button>
-
-<button class="option"
-onclick="showMessage('🤍 Keşke şu an yanında olup sana kocaman sarılabilseydim sevgilim.<br><br>Kendini yalnız hissetme, ben hep seninleyim. 🤍')">
-🤍 Sarılmaya ihtiyacım var
-</button>
-
-<div id="message"></div>
-
-</div>
-
-<script>
-function showMessage(text){
-document.getElementById("message").style.display="block";
-document.getElementById("message").innerHTML=text;
 }
 </script>
 
