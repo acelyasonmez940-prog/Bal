@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⭐ Sürpriz</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.message{
+    display:none;
+    margin-top:20px;
+    padding:15px;
+    background:#FFF8F2;
+    border-radius:15px;
+    color:#8D6E63;
+    line-height:1.7;
+    animation:fade .4s;
+}
+
+@keyframes fade{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<h1>⭐ Küçük Bir Sürpriz</h1>
+
+<p>
+Belki bu sayfadaki küçücük bir cümle bile yüzünde bir tebessüm oluşturur... 🤍🍯
+</p>
+
+<button onclick="showSurprise()">
+🎁 Sürprizi Aç
+</button>
+
+<div id="message" class="message"></div>
+
+<br><br>
+
+<a href="menu.html">← Menüye Dön</a>
+
+</div>
+
+<script>
+
+const surprises = [
+
+"🤍 İyi ki varsın.",
+
+"🌸 Umarım bugün yüzün hep güler.",
+
+"🍯 Seni düşündüğüm bir an daha...",
+
+"🧸 Sana kocaman sarılıyorum.",
+
+"☀️ Gülümse... Sana çok yakışıyor.",
+
+"💌 Kendine bugün de nazik davran.",
+
+"✨ Seninle gurur duyuyorum.",
+
+"🌷 Her şey zamanla yoluna girecek.",
+
+"🤍 Umarım bu mesaj sana küçük de olsa bir tebessüm ettirir.",
+
+"🍓 Bugün de seni düşündüm."
+
+];
+
+function showSurprise(){
+
+const box = document.getElementById("message");
+
+box.style.display = "block";
+
+// %5 ihtimalle Altın Sürpriz
+if(Math.random() < 0.05){
+
+box.innerHTML = `
+<h2>🌹 Altın Sürpriz!</h2>
+
+<p>
+Bu mesajı görmek gerçekten çok zor... 🤍
+</p>
+
+<p>
+Belki bugün şans senin yanındaydı.
+</p>
+
+<p>
+🍯 İyi ki varsın.
+</p>
+
+<p>
+🤫 Bu bizim küçük sırrımız olsun...
+</p>
+`;
+
+}else{
+
+const random = Math.floor(Math.random()*surprises.length);
+
+box.innerHTML = surprises[random];
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
