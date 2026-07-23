@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🐝 Bal AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="header">
+
+<div class="logo">
+🐝
+</div>
+
+<h1>Bal</h1>
+
+<p>Bugün benimle kim sohbet edecek? 🍯</p>
+
+</header>
+
+<section id="welcomeScreen" class="welcome">
+
+<button class="user-card" onclick="selectUser('Açi')">
+
+<h2>🩷 Açi</h2>
+
+<span>Merhaba Bal 💗</span>
+
+</button>
+
+<button class="user-card blue" onclick="selectUser('Bolatinyo')">
+
+<h2>💙 Bolatinyo</h2>
+
+<span>Selam Bal 🍯</span>
+
+</button>
+
+</section>
+
+<section id="chatScreen" class="chat-screen" style="display:none;">
+
+<div id="messages" class="messages">
+
+<div class="message bal">
+
+🐝 Merhaba! Ben Bal.
+
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+type="text"
+id="messageInput"
+placeholder="Mesaj yaz..."
+>
+
+<button onclick="sendMessage()">
+➜
+</button>
+
+</div>
+
+</section>
+
+</div>
+
+<script>
+
+let currentUser="";
+
+function selectUser(name){
+
+currentUser=name;
+
+document.getElementById("welcomeScreen").style.display="none";
+
+document.getElementById("chatScreen").style.display="flex";
+
+document.getElementById("messages").innerHTML=
+`
+<div class="message bal">
+🐝 Merhaba <b>${name}</b> 💗<br><br>
+Bugün nasıl hissediyorsun?
+</div>
+`;
+
+}
+
+function sendMessage(){
+
+const input=document.getElementById("messageInput");
+
+if(input.value.trim()=="") return;
+
+const messages=document.getElementById("messages");
+
+messages.innerHTML+=`
+<div class="message user">
+${input.value}
+</div>
+`;
+
+input.value="";
+
+messages.innerHTML+=`
+<div class="message bal">
+🐝 Bunu not ettim ${currentUser} 🍯
+</div>
+`;
+
+messages.scrollTop=messages.scrollHeight;
+
+}
+
+</script>
+
+</body>
+</html>
