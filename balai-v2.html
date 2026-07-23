@@ -76,55 +76,7 @@ placeholder="Mesaj yaz..."
 
 </div>
 
-<script>
-
-let currentUser="";
-
-function selectUser(name){
-
-currentUser=name;
-
-document.getElementById("welcomeScreen").style.display="none";
-
-document.getElementById("chatScreen").style.display="flex";
-
-document.getElementById("messages").innerHTML=
-`
-<div class="message bal">
-🐝 Merhaba <b>${name}</b> 💗<br><br>
-Bugün nasıl hissediyorsun?
-</div>
-`;
-
-}
-
-function sendMessage(){
-
-const input=document.getElementById("messageInput");
-
-if(input.value.trim()=="") return;
-
-const messages=document.getElementById("messages");
-
-messages.innerHTML+=`
-<div class="message user">
-${input.value}
-</div>
-`;
-
-input.value="";
-
-messages.innerHTML+=`
-<div class="message bal">
-🐝 Bunu not ettim ${currentUser} 🍯
-</div>
-`;
-
-messages.scrollTop=messages.scrollHeight;
-
-}
-
-</script>
+<script src="balai.js"></script>
 
 </body>
 </html>
