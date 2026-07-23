@@ -130,3 +130,8 @@ body{
     height:90px;
     object-fit:contain;
 }
+.logo{
+    display:flex;
+    justify-content:center;
+    margin-bottom:10px;
+}
