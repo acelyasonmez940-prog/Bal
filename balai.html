@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🐝 Bal AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffdbe8,#fff8d8);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.phone{
+width:390px;
+height:844px;
+background:white;
+border-radius:35px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+display:flex;
+flex-direction:column;
+}
+
+.top{
+padding:25px;
+text-align:center;
+background:#ffd4e5;
+}
+
+.top h1{
+color:#7b4f5c;
+font-size:30px;
+}
+
+.top p{
+margin-top:8px;
+color:#8b6d75;
+}
+
+.choose{
+padding:25px;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.card{
+background:#fff6fa;
+padding:20px;
+border-radius:20px;
+cursor:pointer;
+transition:.3s;
+border:2px solid transparent;
+}
+
+.card:hover{
+transform:scale(1.02);
+border-color:#ff9fc5;
+}
+
+.card h2{
+margin-bottom:8px;
+}
+
+.chat{
+display:none;
+flex:1;
+padding:20px;
+overflow:auto;
+background:#fffdfd;
+}
+
+.message{
+padding:14px;
+border-radius:18px;
+margin-bottom:15px;
+max-width:80%;
+}
+
+.bal{
+background:#ffe3ef;
+}
+
+.user{
+background:#d7ecff;
+margin-left:auto;
+}
+
+.inputArea{
+display:none;
+padding:15px;
+display:flex;
+gap:10px;
+background:white;
+border-top:1px solid #eee;
+}
+
+input{
+flex:1;
+padding:14px;
+border-radius:15px;
+border:1px solid #ddd;
+}
+
+button{
+padding:14px 20px;
+border:none;
+background:#ff9fc5;
+color:white;
+border-radius:15px;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="phone">
+
+<div class="top">
+<h1>🐝 Bal</h1>
+<p>Bugün benimle kim sohbet edecek?</p>
+</div>
+
+<div class="choose" id="choose">
+
+<div class="card" onclick="startChat('Açi')">
+<h2>🩷 Açi</h2>
+<p>Merhaba Bal 💗</p>
+</div>
+
+<div class="card" onclick="startChat('Bolatinyo')">
+<h2>💙 Bolatinyo</h2>
+<p>Selam Bal 🍯</p>
+</div>
+
+</div>
+
+<div class="chat" id="chat">
+
+<div class="message bal" id="welcome">
+🐝 Merhaba! Ben Bal 🍯
+</div>
+
+</div>
+
+<div class="inputArea" id="inputArea">
+
+<input
+id="text"
+placeholder="Bal'a mesaj yaz..."
+>
+
+<button onclick="send()">
+➜
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+let person="";
+
+function startChat(name){
+
+person=name;
+
+document.getElementById("choose").style.display="none";
+
+document.getElementById("chat").style.display="block";
+
+document.getElementById("inputArea").style.display="flex";
+
+document.getElementById("welcome").innerHTML=
+"🐝 Merhaba <b>"+name+"</b> 💗<br><br>Ben Bal. Bugün nasılsın? 🍯";
+
+}
+
+function send(){
+
+let input=document.getElementById("text");
+
+if(input.value=="") return;
+
+let chat=document.getElementById("chat");
+
+chat.innerHTML+=`
+<div class="message user">
+${input.value}
+</div>
+`;
+
+setTimeout(()=>{
+
+chat.innerHTML+=`
+<div class="message bal">
+🐝 Seni dinliyorum ${person} 💗
+</div>
+`;
+
+chat.scrollTop=chat.scrollHeight;
+
+},700);
+
+input.value="";
+
+}
+
+</script>
+
+</body>
+</html>
