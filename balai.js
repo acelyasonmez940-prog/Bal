@@ -68,19 +68,13 @@ ${cevap}
     messages.scrollTop = messages.scrollHeight;
 
     setTimeout(() => {
-
-        const typing = document.getElementById("typing");
-        if (typing) typing.remove();
-
-        messages.innerHTML += `
-            <div class="message bal">
-                🐝 Seni dinliyorum ${currentUser} 💕
-            </div>
-        `;
-
-        messages.scrollTop = messages.scrollHeight;
-
-    }, 1000);
+    messages.innerHTML += `
+        <div class="message bal">
+            ${cevap}
+        </div>
+    `;
+    messages.scrollTop = messages.scrollHeight;
+}, 1000);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
