@@ -29,11 +29,33 @@ function sendMessage() {
 
     input.value = "";
 
-    messages.innerHTML += `
-        <div class="message bal" id="typing">
-            🐝 Bal yazıyor...
-        </div>
-    `;
+   let text = input.value.toLowerCase();
+let cevap = "";
+
+if (text.includes("merhaba") || text.includes("selam")) {
+    cevap = `🐝 Merhabaa ${currentUser} 💕 Seni gördüğüme çok sevindim!`;
+}
+else if (text.includes("nasılsın")) {
+    cevap = "🐝 Ben harikayım! Sen nasılsın? 🥰";
+}
+else if (text.includes("seni seviyorum")) {
+    cevap = `🥹 Ben de seni çok seviyorum ${currentUser}! 💗`;
+}
+else if (text.includes("iyi geceler")) {
+    cevap = "🌙 Tatlı rüyalar! Bal hep yanında. 🐝";
+}
+else if (text.includes("teşekkür")) {
+    cevap = "💛 Ne demek! Her zaman buradayım.";
+}
+else {
+    cevap = `🐝 Seni dinliyorum ${currentUser} 💕`;
+}
+
+messages.innerHTML += `
+<div class="message bal">
+${cevap}
+</div>
+`;
 
     messages.scrollTop = messages.scrollHeight;
 
