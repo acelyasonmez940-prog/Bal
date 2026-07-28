@@ -13,7 +13,29 @@ const responses = {
   oyun: [],
   gunluk: [],
   gunaydin: [],
-  iyiGeceler: []
+  iyiGeceler: [],
+
+  kutlama: [],
+  ozur: [],
+  tesekkur: [],
+  yalnizlik: [],
+  kaygi: [],
+  hobiler: [],
+  film: [],
+  muzik: [],
+  kitap: [],
+  havaDurumu: [],
+
+  okul: [],
+  sinav: [],
+  yemek: [],
+  spor: [],
+  teknoloji: [],
+  hayvanlar: [],
+  seyahat: [],
+  motivasyon: [],
+  uyku: [],
+  rastgele: []
 };
 
 export default responses;
