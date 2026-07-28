@@ -27,7 +27,15 @@ function sendMessage() {
         </div>
     `;
 
-    input.value = "";
+const text = input.value.trim().toLowerCase();
+
+messages.innerHTML += `
+    <div class="message user">
+        ${input.value}
+    </div>
+`;
+
+input.value = "";
 
    let text = input.value.toLowerCase();
 let cevap = "";
