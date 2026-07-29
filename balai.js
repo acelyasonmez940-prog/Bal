@@ -41,7 +41,7 @@ if (selam.keywords.some(keyword => text.includes(keyword))) {
     cevap = getRandomReply(selam.replies);
 }
 
-    if (text.includes("merhaba") || text.includes("selam")) {
+if (!cevap && (text.includes("merhaba") || text.includes("selam"))) {
         cevap = `🐝 Merhabaa ${currentUser} 💕 Seni gördüğüme çok sevindim!`;
     }
     else if (text.includes("nasılsın")) {
