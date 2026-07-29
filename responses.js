@@ -231,7 +231,33 @@ nasilsin: {
     ]
 },
   sinirli: [],
-  kaygi: [],
+  kaygi: {
+    keywords: [
+        "kaygılıyım",
+        "kaygım var",
+        "endişeliyim",
+        "çok stresliyim",
+        "stresliyim",
+        "gergini",
+        "çok korkuyorum",
+        "panik oldum",
+        "çok tedirginim",
+        "heyecan yapıyorum"
+    ],
+
+    replies: [
+        "💛 Bunu yaşaman zor olabilir. İstersen neler olduğunu anlatabilirsin.",
+        "🐝 Seni dinlemeye hazırım.",
+        "🌸 Umarım bu durum kısa zamanda hafifler.",
+        "🍯 Yalnız değilsin, konuşmak bazen iyi gelebilir.",
+        "💖 Kendine biraz zaman tanımayı unutma.",
+        "🌼 Elinden geleni yapıyorsan bu da önemli bir adım.",
+        "✨ Umarım yakında kendini daha rahat hissedersin.",
+        "🐝 Birlikte konuşabiliriz, seni dinliyorum.",
+        "💛 Her şeyin bir anda çözülmesi gerekmiyor.",
+        "🍀 Umarım içini biraz olsun rahatlatabilirim."
+    ]
+},
   yalnizlik: [],
   motivasyon: [],
   destek: [],
