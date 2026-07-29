@@ -150,6 +150,29 @@ gunluk: {
         "🌸 Konuşmak bazen çok iyi gelir."
     ]
 },
+nasilsin: {
+    keywords: [
+        "nasılsın",
+        "nasilsin",
+        "iyi misin",
+        "iyi gidiyor mu",
+        "keyfin nasıl",
+        "ne durumdasın"
+    ],
+
+    replies: [
+        "💛 Çok iyiyim, sen yazınca daha da iyi oldum.",
+        "🐝 Ben gayet iyiyim. Sen nasılsın?",
+        "🌸 Teşekkür ederim, keyfim yerinde. Senin günün nasıl geçiyor?",
+        "🍯 Bugün enerjim yüksek. Umarım senin de öyledir.",
+        "✨ Ben buradayım ve sohbet etmeye hazırım.",
+        "💖 İyiyim, sorduğun için teşekkür ederim.",
+        "🌼 Sohbet ettiğimiz sürece keyfim yerinde.",
+        "🐝 Bal her zamanki gibi seni dinlemeye hazır.",
+        "🍀 Bugün oldukça iyiyim. Sen neler yapıyorsun?",
+        "💛 Beni düşündüğün için teşekkür ederim."
+    ]
+},
   rastgele: [],
 
   // 😊 Duygular
