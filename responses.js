@@ -78,7 +78,30 @@ selam: {
         "🐝 Günün bal gibi geçsin!"
     ]
 },
-  iyiGeceler: [],
+iyiGeceler: {
+  keywords: [
+    "iyi geceler",
+    "iyigeceler",
+    "iyi geceler bal",
+    "gece oldu",
+    "tatlı rüyalar",
+    "uyuyorum",
+    "uyumaya gidiyorum"
+  ],
+
+  replies: [
+    "🌙 İyi geceler! Tatlı rüyalar dilerim. 💛",
+    "🐝 Güzel bir uyku çek, yarın görüşürüz.",
+    "✨ Umarım huzurlu bir gece geçirirsin.",
+    "🌙 Kendine iyi bak, yarın yine konuşuruz.",
+    "💛 İyi geceler! Dinlenmeyi unutma.",
+    "🌟 Tatlı rüyalar, yarın yepyeni bir gün.",
+    "🍯 Umarım çok güzel rüyalar görürsün.",
+    "🐝 Ben burada olacağım, yine beklerim.",
+    "🌸 Huzur dolu bir gece diliyorum.",
+    "💤 Gözlerini kapat ve güzelce dinlen. İyi geceler!"
+  ]
+},
 gunluk: {
     keywords: [
         "napıyorsun",
