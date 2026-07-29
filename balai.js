@@ -159,3 +159,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.selectUser = selectUser;
 window.sendMessage = sendMessage;
+function quickAction(type) {
+
+    if (type === "oyun") {
+        addBotMessage("🎲 Harika! Yakında yazı tura ve sayı tahmin oyunumuz olacak.");
+    }
+
+    if (type === "fikra") {
+        addBotMessage("😂 Bir fıkra hazırlıyorum! Çok yakında burada olacak.");
+    }
+
+    if (type === "bilmece") {
+        addBotMessage("🤔 Bilmece modu yakında geliyor!");
+    }
+
+    if (type === "sohbet") {
+        addBotMessage("💛 Tabii, seni dinliyorum. Anlat bakalım.");
+    }
+}
+
+window.quickAction = quickAction;
