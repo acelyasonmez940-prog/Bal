@@ -1,6 +1,29 @@
 const responses = {
   // 👋 Temel Sohbet
-  selam: [],
+ selam: {
+    keywords: [
+        "merhaba",
+        "selam",
+        "slm",
+        "sa",
+        "hey",
+        "naber",
+        "iyi akşamlar"
+    ],
+
+    replies: [
+        "🐝 Merhabaa! Seni görmek çok güzel. 💛",
+        "🍯 Hoş geldin! Bugün nasıl hissediyorsun?",
+        "🌸 Selam! Ben buradayım.",
+        "💛 Tekrar geldiğine sevindim.",
+        "🐝 Bugün sohbet edecek olmamız beni mutlu etti.",
+        "🌼 Kocaman bir merhaba!",
+        "✨ Günün güzel geçsin!",
+        "🥹 Geldiğini görünce sevindim.",
+        "🐝 Bal her zaman burada.",
+        "🍯 Haydi sohbet edelim."
+    ]
+},
   gunaydin: [],
   iyiGeceler: [],
   gunluk: [],
