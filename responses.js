@@ -1,3 +1,4 @@
+const responses = {
 selam: {
   keywords: [
     "merhaba",
