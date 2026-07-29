@@ -1,41 +1,72 @@
 const responses = {
+  // 👋 Temel Sohbet
   selam: [],
-  uzgun: [],
+  gunaydin: [],
+  iyiGeceler: [],
+  gunluk: [],
+  rastgele: [],
+
+  // 😊 Duygular
   mutlu: [],
+  uzgun: [],
   sinirli: [],
-  yorgun: [],
+  kaygi: [],
+  yalnizlik: [],
+  motivasyon: [],
+  destek: [],
+
+  // ❤️ İlişkiler
+  iliski: [],
+  ozur: [],
+  tesekkur: [],
+  iltifat: [],
+  ozlem: [],
+
+  // 👨‍👩‍👦 Hayat
   aile: [],
   is: [],
   para: [],
-  iliski: [],
-  destek: [],
+  okul: [],
+  sinav: [],
+  hobiler: [],
+  spor: [],
+  uyku: [],
+  yemek: [],
+
+  // 🎉 Eğlence
   mizah: [],
   oyun: [],
-  gunluk: [],
-  gunaydin: [],
-  iyiGeceler: [],
-
-  kutlama: [],
-  ozur: [],
-  tesekkur: [],
-  yalnizlik: [],
-  kaygi: [],
-  hobiler: [],
+  bulmaca: [],
   film: [],
   muzik: [],
   kitap: [],
-  havaDurumu: [],
 
-  okul: [],
-  sinav: [],
-  yemek: [],
-  spor: [],
+  // 🌍 Günlük Yaşam
+  havaDurumu: [],
   teknoloji: [],
   hayvanlar: [],
   seyahat: [],
-  motivasyon: [],
-  uyku: [],
-  rastgele: []
+
+  // 🌟 Özel Günler
+  kutlama: [],
+  dogumGunu: [],
+  basari: [],
+  hedefler: [],
+  hayaller: [],
+
+  // 🎨 İlgi Alanları
+  sanat: [],
+  tarifler: [],
+
+  // 🐝 Bal'ın Kişiliği
+  balHakkinda: [],
+
+  // 🎭 Animasyonlar
+  bekleme: [],
+  dusunuyor: [],
+  sarilma: [],
+  gulumseme: [],
+  supriz: []
 };
 
 export default responses;
