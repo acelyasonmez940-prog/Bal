@@ -52,7 +52,7 @@ function sendMessage() {
     const selam = responses.selam;
 
 if (selam.keywords.some(keyword => text.includes(keyword))) {
-    cevap = getRandomReply(selam.replies);
+cevap = "🎉 TEST ÇALIŞTI";
 }
 
 if (!cevap && (text.includes("merhaba") || text.includes("selam"))) {
