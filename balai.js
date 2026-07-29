@@ -2,7 +2,7 @@ import responses from "./responses.js";
 
 let currentUser = "";
 let lastReply = "";
-
+let currentMode = "chat";
 function getRandomReply(list) {
     if (!list || list.length === 0) return "";
 
