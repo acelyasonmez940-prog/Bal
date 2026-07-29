@@ -3,23 +3,8 @@ import responses from "./responses.js";
 let currentUser = "";
 let lastReply = "";
 
-function selectUser(name) {
-    currentUser = name;
-
-    document.getElementById("welcomeScreen").style.display = "none";
-    document.getElementById("chatScreen").style.display = "flex";
-
-    document.getElementById("messages").innerHTML = `
-        <div class="message bal">
-            🐝 Merhaba <b>${name}</b> 💗<br><br>
-            Ben Bal! Bugün nasılsın? 🍯
-        </div>
-    `;
-}
 function getRandomReply(list) {
-    if (!list || list.length === 0) {
-        return "";
-    }
+    if (!list || list.length === 0) return "";
 
     let reply;
 
@@ -28,53 +13,106 @@ function getRandomReply(list) {
     } while (reply === lastReply && list.length > 1);
 
     lastReply = reply;
-
     return reply;
 }
+
+function selectUser(name) {
+    currentUser = name;
+
+    document.getElementById("welcomeScreen").style.display = "none";
+    document.getElementById("chatScreen").style.display = "flex";
+
+    document.getElementById("messages").innerHTML = `
+        <div class="message bal">
+            🐝 Merhaba <b>${name}</b> 💛<br><br>
+            Ben Bal! Bugün nasılsın?
+        </div>
+    `;
+}
+
+function findResponse(text) {
+
+    for (const key in responses) {
+
+        const category = responses[key];
+
+        if (
+            category &&
+            typeof category === "object" &&
+            Array.isArray(category.keywords) &&
+            Array.isArray(category.replies)
+        ) {
+
+            if (
+                category.keywords.some(keyword =>
+                    text.includes(keyword.toLowerCase())
+                )
+            ) {
+                return getRandomReply(category.replies);
+            }
+
+        }
+
+    }
+
+    return "";
+}
+
 function sendMessage() {
+
     const input = document.getElementById("messageInput");
 
     if (input.value.trim() === "") return;
 
-    const messages = document.getElementById("messages");
-    const text = input.value.trim().toLowerCase();
+    const originalText = input.value;
+    const text = originalText.toLowerCase().trim();
 
-    // Kullanıcının mesajını göster
+    const messages = document.getElementById("messages");
+
     messages.innerHTML += `
         <div class="message user">
-            ${input.value}
+            ${originalText}
         </div>
     `;
+        input.value = "";
 
-    input.value = "";
+    let cevap = findResponse(text);
 
-    let cevap = "";
-    const selam = responses.selam;
+    if (!cevap) {
 
-if (selam.keywords.some(keyword => text.includes(keyword))) {
-cevap = "🎉 TEST ÇALIŞTI";
-}
+        if (text.includes("nasılsın")) {
+            cevap = "🐝 Ben çok iyiyim! Sen nasılsın? 💛";
+        }
 
-if (!cevap && (text.includes("merhaba") || text.includes("selam"))) {
-        cevap = `🐝 Merhabaa ${currentUser} 💕 Seni gördüğüme çok sevindim!`;
-    }
-    else if (text.includes("nasılsın")) {
-        cevap = "🐝 Ben harikayım! Sen nasılsın? 🥰";
-    }
-    else if (text.includes("seni seviyorum")) {
-        cevap = `🥹 Ben de seni çok seviyorum ${currentUser}! 💗`;
-    }
-    else if (text.includes("iyi geceler")) {
-        cevap = "🌙 Tatlı rüyalar! Bal hep yanında. 🐝";
-    }
-    else if (text.includes("teşekkür")) {
-        cevap = "💛 Ne demek! Her zaman buradayım.";
-    }
-    else {
-        cevap = `🐝 Seni dinliyorum ${currentUser} 💕`;
+        else if (text.includes("seni seviyorum")) {
+            cevap = `🥹 Ben de seni çok seviyorum ${currentUser}! 💛`;
+        }
+
+        else if (text.includes("teşekkür")) {
+            cevap = "💛 Rica ederim. Her zaman buradayım.";
+        }
+
+        else if (
+            text.includes("iyi geceler") ||
+            text.includes("iyi geceler bal")
+        ) {
+            cevap = "🌙 Sana huzurlu geceler diliyorum. Tatlı rüyalar. 🐝";
+        }
+
+        else if (
+            text.includes("görüşürüz") ||
+            text.includes("bay") ||
+            text.includes("bye")
+        ) {
+            cevap = "👋 Görüşürüz! Kendine iyi bak. 💛";
+        }
+
+        else {
+            cevap = `🐝 Seni dinliyorum ${currentUser} 💕`;
+        }
+
     }
 
-    // Yazıyor animasyonu
     messages.innerHTML += `
         <div class="message bal" id="typing">
             🐝 Yazıyor...
@@ -84,8 +122,11 @@ if (!cevap && (text.includes("merhaba") || text.includes("selam"))) {
     messages.scrollTop = messages.scrollHeight;
 
     setTimeout(() => {
-        const typing = document.getElementById("typing");
-        if (typing) typing.remove();
+            const typing = document.getElementById("typing");
+
+        if (typing) {
+            typing.remove();
+        }
 
         messages.innerHTML += `
             <div class="message bal">
@@ -94,19 +135,27 @@ if (!cevap && (text.includes("merhaba") || text.includes("selam"))) {
         `;
 
         messages.scrollTop = messages.scrollHeight;
-    }, 1000);
-}
 
+    }, 900);
+
+}
 document.addEventListener("DOMContentLoaded", () => {
+
     const input = document.getElementById("messageInput");
 
     if (input) {
+
         input.addEventListener("keypress", function (e) {
+
             if (e.key === "Enter") {
                 sendMessage();
             }
+
         });
+
     }
+
 });
+
 window.selectUser = selectUser;
 window.sendMessage = sendMessage;
