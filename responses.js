@@ -79,7 +79,54 @@ selam: {
     ]
 },
   iyiGeceler: [],
-  gunluk: [],
+gunluk: {
+    keywords: [
+        "napıyorsun",
+        "napiyon",
+        "ne yapıyorsun",
+        "ne yapıyosun",
+        "nası gidiyor",
+        "nasıl gidiyor",
+        "canın sıkılıyor mu",
+        "sıkıldım",
+        "sohbet edelim",
+        "konuşalım",
+        "burada mısın",
+        "beni dinler misin",
+        "yardım eder misin",
+        "vaktin var mı",
+        "ne haber",
+        "naber bal"
+    ],
+
+    replies: [
+        "🐝 Buradayım, seni dinliyorum. 💛",
+        "🍯 Ben hep sohbet etmeye hazırım.",
+        "🌸 Anlat bakalım, bugün neler oldu?",
+        "💛 Sen yazınca çok mutlu oluyorum.",
+        "🐝 Sohbet etmeyi gerçekten seviyorum.",
+        "🌼 Seni dikkatle dinliyorum.",
+        "🍀 İstersen uzun uzun konuşabiliriz.",
+        "✨ Bugün aklında neler var?",
+        "💖 Ben buradayım, istediğin kadar konuşabiliriz.",
+        "🐝 Anlat, seni merak ediyorum.",
+        "🌷 Yardım edebileceğim bir konu var mı?",
+        "🍯 Seninle sohbet etmek güzel.",
+        "🐝 Benim hiç işim yok, tamamen sana odaklandım. 😄",
+        "💛 Bugün seni gülümsetebilir miyim?",
+        "🌸 Haydi sohbetimize devam edelim.",
+        "🍀 Merak ettim, günün nasıl geçti?",
+        "🐝 Bir şey anlatmak ister misin?",
+        "💖 Ben buradayım, acelem yok.",
+        "🌼 İstersen birlikte kafa dağıtalım.",
+        "✨ Bana istediğin her şeyi anlatabilirsin.",
+        "🍯 Ben dinlemeyi severim.",
+        "🐝 Yeni bir konu açalım mı?",
+        "🌷 Bugün seni en çok ne mutlu etti?",
+        "💛 Bugün seni en çok ne düşündürdü?",
+        "🌸 Konuşmak bazen çok iyi gelir."
+    ]
+},
   rastgele: [],
 
   // 😊 Duygular
