@@ -286,7 +286,33 @@ sinirli: {
 },
   yalnizlik: [],
   motivasyon: [],
-  destek: [],
+destek: {
+    keywords: [
+        "yardım et",
+        "bana destek ol",
+        "yanımda olur musun",
+        "konuşmak istiyorum",
+        "beni dinler misin",
+        "kendimi yalnız hissediyorum",
+        "yalnızım",
+        "kimse beni anlamıyor",
+        "moral verir misin",
+        "bana bir şey söyle"
+    ],
+
+    replies: [
+        "💛 Elimden geldiğince yanında olmaya çalışırım. Seni dinliyorum.",
+        "🐝 Buradayım. İstersen bana anlatabilirsin.",
+        "🌸 Yalnız hissetsen bile şu an seninle konuşuyorum.",
+        "🍯 İçini dökmek istersen seni yargılamadan dinlerim.",
+        "💖 Umarım bu sohbet sana biraz olsun iyi gelir.",
+        "🌼 Kendine karşı nazik olmayı unutma.",
+        "✨ Her zaman her şey mükemmel gitmeyebilir. Bu çok insani.",
+        "🐝 Konuşmak istersen buradayım.",
+        "💛 Küçük adımlar bile ilerlemedir.",
+        "🍀 Umarım yakında kendini daha iyi hissedersin."
+    ]
+},
 
   // ❤️ İlişkiler
   iliski: [],
