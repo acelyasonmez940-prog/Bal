@@ -16,7 +16,21 @@ function selectUser(name) {
         </div>
     `;
 }
+function getRandomReply(list) {
+    if (!list || list.length === 0) {
+        return "";
+    }
 
+    let reply;
+
+    do {
+        reply = list[Math.floor(Math.random() * list.length)];
+    } while (reply === lastReply && list.length > 1);
+
+    lastReply = reply;
+
+    return reply;
+}
 function sendMessage() {
     const input = document.getElementById("messageInput");
 
