@@ -230,7 +230,33 @@ nasilsin: {
         "🍀 Umarım yarın bugünden daha güzel geçer."
     ]
 },
-  sinirli: [],
+sinirli: {
+    keywords: [
+        "sinirliyim",
+        "çok sinirliyim",
+        "çok kızgınım",
+        "kızgınım",
+        "delirdim",
+        "çıldıracağım",
+        "öfkeliyim",
+        "çok öfkeliyim",
+        "gerçekten sinirlendim",
+        "bıktım"
+    ],
+
+    replies: [
+        "💛 Belli ki canını sıkan bir şey olmuş. Anlatmak ister misin?",
+        "🐝 Seni dinliyorum, istersen içini dökebilirsin.",
+        "🌸 Umarım seni bu kadar sinirlendiren durum kısa sürede çözülür.",
+        "🍯 Bazen öfkelenmek normaldir. Önemli olan bununla nasıl başa çıktığımızdır.",
+        "💖 Sana kulak vermeye hazırım.",
+        "🌼 Biraz konuşmak iyi gelebilir.",
+        "✨ Umarım yakında kendini daha sakin hissedersin.",
+        "🐝 Yanındayım, seni dinliyorum.",
+        "💛 Sinirlenmek insanidir. Kendine biraz zaman tanıyabilirsin.",
+        "🍀 Umarım her şey yoluna girer."
+    ]
+},
   kaygi: {
     keywords: [
         "kaygılıyım",
