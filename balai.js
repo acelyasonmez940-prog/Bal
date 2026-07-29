@@ -1,4 +1,7 @@
+import responses from "./responses.js";
+
 let currentUser = "";
+let lastReply = "";
 
 function selectUser(name) {
     currentUser = name;
