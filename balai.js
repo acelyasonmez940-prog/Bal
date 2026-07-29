@@ -297,5 +297,25 @@ if (type === "oyun") {
 
     messages.scrollTop = messages.scrollHeight;
 }
+function startGame(game) {
+
+    currentMode = game;
+
+    const messages = document.getElementById("messages");
+
+    if (game === "coin") {
+
+        messages.innerHTML += `
+        <div class="message bal">
+            🪙 Güzel seçim!<br><br>
+            Yazı mı seçiyorsun yoksa Tura mı?
+        </div>
+        `;
+    }
+
+    messages.scrollTop = messages.scrollHeight;
+}
+
+window.startGame = startGame;
 
 window.quickAction = quickAction;
