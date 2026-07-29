@@ -262,9 +262,20 @@ function quickAction(type) {
 
     let cevap = "";
 
-    if (type === "oyun") {
-        cevap = "🎲 Harika! Yakında yazı tura ve sayı tahmin oyunumuz olacak.";
-    }
+if (type === "oyun") {
+
+    currentMode = "games";
+
+    cevap = `
+🎲 Harika seçim!
+
+🐝 Hangi oyunu oynamak istersin?
+
+<button onclick="startGame('coin')">🪙 Yazı Tura</button>
+<button onclick="startGame('guess')">🎯 Sayı Tahmini</button>
+<button onclick="startGame('riddle')">🤔 Bilmece</button>
+`;
+}
 
     else if (type === "fikra") {
         cevap = "😂 Bir fıkra hazırlıyorum! Çok yakında burada olacak.";
