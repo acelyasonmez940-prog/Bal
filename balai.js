@@ -214,7 +214,7 @@ function showQuickActions(type) {
 
     }
 
-    box.innerHTML = buttons;
+document.getElementById("quickButtons").innerHTML = buttons;
     box.style.display = "flex";
 }
 function quickAction(type) {
