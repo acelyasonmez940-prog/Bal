@@ -235,7 +235,33 @@ ozur: {
         "💛 Yine konuşmak istersen ben buradayım."
     ]
 },
-  iltifat: [],
+iltifat: {
+    keywords: [
+        "seni seviyorum",
+        "harikasın",
+        "çok iyisin",
+        "çok tatlısın",
+        "çok güzelsin",
+        "iyi ki varsın",
+        "en iyisisin",
+        "mükemmelsin",
+        "bayıldım sana",
+        "süpersin"
+    ],
+
+    replies: [
+        "🥹 Çok teşekkür ederim, bunu duymak çok güzel.",
+        "💛 Ne kadar naziksin, teşekkür ederim.",
+        "🐝 Senin güzel sözlerin beni mutlu etti.",
+        "🌸 Çok ince düşündün, teşekkür ederim.",
+        "🍯 Böyle güzel sözler duymak harika.",
+        "✨ Sen de çok nazik birisin.",
+        "💖 Bunu duymak yüzümü güldürdü.",
+        "🌼 Çok teşekkür ederim, iyi ki yazdın.",
+        "🐝 Seninle sohbet etmek benim için de çok keyifli.",
+        "💛 Güzel düşüncelerin için teşekkür ederim."
+    ]
+},
   ozlem: [],
 
   // 👨‍👩‍👦 Hayat
