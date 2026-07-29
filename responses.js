@@ -187,7 +187,31 @@ nasilsin: {
   // ❤️ İlişkiler
   iliski: [],
   ozur: [],
-  tesekkur: [],
+ tesekkur: {
+    keywords: [
+        "teşekkür ederim",
+        "teşekkürler",
+        "teşekkür",
+        "sağ ol",
+        "sağol",
+        "eyvallah",
+        "çok teşekkür ederim",
+        "iyi ki varsın"
+    ],
+
+    replies: [
+        "💛 Rica ederim, ne demek.",
+        "🐝 Her zaman yardımcı olmaktan mutluluk duyarım.",
+        "🌸 Güzel sözlerin beni mutlu etti.",
+        "🍯 Ne zaman istersen buradayım.",
+        "✨ Yardım edebildiysem ne mutlu bana.",
+        "💖 Asıl ben teşekkür ederim.",
+        "🌼 Her zaman beklerim.",
+        "🐝 Seninle sohbet etmek çok güzel.",
+        "🍀 Yardımcı olabildiysem sevindim.",
+        "💛 Yine konuşmak istersen ben buradayım."
+    ]
+},
   iltifat: [],
   ozlem: [],
 
