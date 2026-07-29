@@ -77,7 +77,29 @@ function sendMessage() {
         input.value = "";
 
     let cevap = findResponse(text);
+    const quickActions = document.getElementById("quickActions");
 
+quickActions.style.display = "none";
+
+if (text.includes("üzgün") || text.includes("moral")) {
+    showQuickActions("uzgun");
+}
+
+else if (
+    text.includes("sinir") ||
+    text.includes("öfke") ||
+    text.includes("kızgın")
+) {
+    showQuickActions("sinirli");
+}
+
+else if (
+    text.includes("mutlu") ||
+    text.includes("sevindim") ||
+    text.includes("harikayım")
+) {
+    showQuickActions("mutlu");
+}
     if (!cevap) {
 
         if (text.includes("nasılsın")) {
