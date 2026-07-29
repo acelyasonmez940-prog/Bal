@@ -159,6 +159,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.selectUser = selectUser;
 window.sendMessage = sendMessage;
+function showQuickActions(type) {
+
+    const box = document.getElementById("quickActions");
+
+    let buttons = "";
+
+    if (type === "uzgun") {
+
+        buttons = `
+            <button onclick="quickAction('sohbet')">💬 Anlatmak İstiyorum</button>
+            <button onclick="quickAction('oyun')">🎲 Oyun Oyna</button>
+        `;
+
+    }
+
+    else if (type === "sinirli") {
+
+        buttons = `
+            <button onclick="quickAction('fikra')">😂 Fıkra</button>
+            <button onclick="quickAction('bilmece')">🤔 Bilmece</button>
+        `;
+
+    }
+
+    else if (type === "mutlu") {
+
+        buttons = `
+            <button onclick="quickAction('oyun')">🎉 Oyun</button>
+            <button onclick="quickAction('bilmece')">🧩 Bilmece</button>
+        `;
+
+    }
+
+    box.innerHTML = buttons;
+    box.style.display = "flex";
+}
 function quickAction(type) {
 
     const messages = document.getElementById("messages");
