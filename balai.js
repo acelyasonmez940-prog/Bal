@@ -184,10 +184,13 @@ window.sendMessage = sendMessage;
 function showQuickActions(type) {
 
     const box = document.getElementById("quickActions");
-const title = document.querySelector(".quick-title");
+    const title = document.querySelector(".quick-title");
+
     let buttons = "";
 
     if (type === "uzgun") {
+
+        title.innerHTML = "💛 Belki bunlardan biri sana iyi gelebilir.";
 
         buttons = `
             <button onclick="quickAction('sohbet')">💬 Anlatmak İstiyorum</button>
@@ -196,6 +199,42 @@ const title = document.querySelector(".quick-title");
 
     }
 
+    else if (type === "sinirli") {
+
+        title.innerHTML = "🌼 Biraz kafa dağıtmak ister misin?";
+
+        buttons = `
+            <button onclick="quickAction('fikra')">😂 Fıkra</button>
+            <button onclick="quickAction('bilmece')">🤔 Bilmece</button>
+        `;
+
+    }
+
+    else if (type === "mutlu") {
+
+        title.innerHTML = "🎉 Bu güzel enerjiyi birlikte devam ettirelim!";
+
+        buttons = `
+            <button onclick="quickAction('oyun')">🎲 Oyun Oyna</button>
+            <button onclick="quickAction('bilmece')">🧩 Bilmece</button>
+        `;
+
+    }
+
+    else {
+
+        title.innerHTML = "💛 Belki bunlardan biri iyi gelebilir.";
+
+        buttons = `
+            <button onclick="quickAction('sohbet')">💬 Sohbet Edelim</button>
+        `;
+
+    }
+
+    document.getElementById("quickButtons").innerHTML = buttons;
+
+    box.style.display = "flex";
+}
     else if (type === "sinirli") {
 
         buttons = `
