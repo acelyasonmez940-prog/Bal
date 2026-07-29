@@ -35,6 +35,11 @@ function sendMessage() {
     input.value = "";
 
     let cevap = "";
+    const selam = responses.selam;
+
+if (selam.keywords.some(keyword => text.includes(keyword))) {
+    cevap = getRandomReply(selam.replies);
+}
 
     if (text.includes("merhaba") || text.includes("selam")) {
         cevap = `🐝 Merhabaa ${currentUser} 💕 Seni gördüğüme çok sevindim!`;
