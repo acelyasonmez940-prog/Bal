@@ -184,7 +184,7 @@ window.sendMessage = sendMessage;
 function showQuickActions(type) {
 
     const box = document.getElementById("quickActions");
-
+const title = document.querySelector(".quick-title");
     let buttons = "";
 
     if (type === "uzgun") {
