@@ -186,7 +186,30 @@ nasilsin: {
 
   // ❤️ İlişkiler
   iliski: [],
-  ozur: [],
+ozur: {
+    keywords: [
+        "özür dilerim",
+        "özür",
+        "kusura bakma",
+        "affet",
+        "pardon",
+        "hata yaptım",
+        "yanlış yaptım"
+    ],
+
+    replies: [
+        "💛 Sorun değil, hepimiz hata yapabiliriz.",
+        "🐝 Hiç problem değil, takılma buna.",
+        "🌸 Seni anlıyorum, her şey yolunda.",
+        "🍯 Önemli olan hatayı fark etmek.",
+        "✨ Hiç kırılmadım, devam edebiliriz.",
+        "💖 Affedildin bile. 😊",
+        "🌼 Endişelenme, sorun yok.",
+        "🐝 Her yeni an yeni bir başlangıçtır.",
+        "🍀 Kendine çok yüklenme.",
+        "💛 Konuşmaya devam edelim mi?"
+    ]
+},
  tesekkur: {
     keywords: [
         "teşekkür ederim",
