@@ -176,7 +176,33 @@ nasilsin: {
   rastgele: [],
 
   // 😊 Duygular
-  mutlu: [],
+  mutlu: {
+    keywords: [
+        "çok mutluyum",
+        "mutluyum",
+        "çok sevindim",
+        "harikayım",
+        "keyfim yerinde",
+        "çok iyiyim",
+        "bugün çok güzel",
+        "çok heyecanlıyım",
+        "çok eğlendim",
+        "yüzüm gülüyor"
+    ],
+
+    replies: [
+        "🥳 Buna çok sevindim! Umarım mutluluğun hep sürer.",
+        "💛 Sen mutlu olunca ben de seviniyorum.",
+        "🌸 Harika haber! Keyfini doyasıya çıkar.",
+        "🐝 Böyle güzel hissetmene çok sevindim.",
+        "🍯 Umarım günün daha da güzel geçer.",
+        "✨ Mutluluğunu benimle paylaşman çok hoş.",
+        "🌼 Hep böyle gülümsemeni dilerim.",
+        "💖 Bu enerjin bana da geçti!",
+        "🐝 Harika! Bugün senin günün olsun.",
+        "🍀 İnşallah bu güzel his uzun süre devam eder."
+    ]
+},
   uzgun: [],
   sinirli: [],
   kaygi: [],
