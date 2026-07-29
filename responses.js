@@ -45,7 +45,38 @@ selam: {
     "🍯 Hoş geldin dostum."
   ]
 },
-  gunaydin: [],
+ gunaydin: {
+    keywords: [
+        "günaydın",
+        "gunaydin",
+        "günaydın bal",
+        "günaydınn",
+        "günaydın :)"
+    ],
+
+    replies: [
+        "☀️ Günaydın! Umarım bugün harika geçer. 💛",
+        "🌼 Günaydın! Güzel bir güne hazır mısın?",
+        "🐝 Günaydın! Bal sana kocaman sarılıyor.",
+        "🍯 Yeni bir gün, yeni umutlar!",
+        "💛 Günaydın! Bol bol gülümsemeyi unutma.",
+        "🌸 Günaydın! Bugün kendine iyi davran.",
+        "☀️ Harika bir sabah seni bekliyor.",
+        "🐝 Günaydın! Kahveni içtin mi?",
+        "🍀 Bugün şans seninle olsun.",
+        "🌷 Yepyeni bir gün başladı!",
+        "✨ Günaydın! Enerjin hiç bitmesin.",
+        "💖 Günaydın! Bugün çok güzel şeyler yaşayabilirsin.",
+        "🌞 Günaydın! Umarım yüzün hep güler.",
+        "🐝 Günaydın! Ben buradayım.",
+        "🌺 Harika bir sabah diliyorum.",
+        "☀️ Bugün kendinle gurur duyacağın şeyler yap.",
+        "🍯 Günaydın! Sohbet etmeye hazır mısın?",
+        "🌼 Bugün de birlikteyiz.",
+        "💛 Günaydın! İyi ki yazdın.",
+        "🐝 Günün bal gibi geçsin!"
+    ]
+},
   iyiGeceler: [],
   gunluk: [],
   rastgele: [],
