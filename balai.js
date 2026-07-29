@@ -235,27 +235,7 @@ function showQuickActions(type) {
 
     box.style.display = "flex";
 }
-    else if (type === "sinirli") {
-
-        buttons = `
-            <button onclick="quickAction('fikra')">😂 Fıkra</button>
-            <button onclick="quickAction('bilmece')">🤔 Bilmece</button>
-        `;
-
-    }
-
-    else if (type === "mutlu") {
-
-        buttons = `
-            <button onclick="quickAction('oyun')">🎉 Oyun</button>
-            <button onclick="quickAction('bilmece')">🧩 Bilmece</button>
-        `;
-
-    }
-
-document.getElementById("quickButtons").innerHTML = buttons;
-    box.style.display = "flex";
-}
+  
 function quickAction(type) {
 
     const messages = document.getElementById("messages");
