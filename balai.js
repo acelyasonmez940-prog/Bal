@@ -89,3 +89,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+window.selectUser = selectUser;
+window.sendMessage = sendMessage;
