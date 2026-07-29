@@ -161,21 +161,33 @@ window.selectUser = selectUser;
 window.sendMessage = sendMessage;
 function quickAction(type) {
 
+    const messages = document.getElementById("messages");
+
+    let cevap = "";
+
     if (type === "oyun") {
-        addBotMessage("🎲 Harika! Yakında yazı tura ve sayı tahmin oyunumuz olacak.");
+        cevap = "🎲 Harika! Yakında yazı tura ve sayı tahmin oyunumuz olacak.";
     }
 
-    if (type === "fikra") {
-        addBotMessage("😂 Bir fıkra hazırlıyorum! Çok yakında burada olacak.");
+    else if (type === "fikra") {
+        cevap = "😂 Bir fıkra hazırlıyorum! Çok yakında burada olacak.";
     }
 
-    if (type === "bilmece") {
-        addBotMessage("🤔 Bilmece modu yakında geliyor!");
+    else if (type === "bilmece") {
+        cevap = "🤔 Bilmece modu yakında geliyor!";
     }
 
-    if (type === "sohbet") {
-        addBotMessage("💛 Tabii, seni dinliyorum. Anlat bakalım.");
+    else if (type === "sohbet") {
+        cevap = "💛 Tabii. Seni dinliyorum, anlat bakalım.";
     }
+
+    messages.innerHTML += `
+        <div class="message bal">
+            ${cevap}
+        </div>
+    `;
+
+    messages.scrollTop = messages.scrollHeight;
 }
 
 window.quickAction = quickAction;
