@@ -203,7 +203,33 @@ nasilsin: {
         "🍀 İnşallah bu güzel his uzun süre devam eder."
     ]
 },
-  uzgun: [],
+  uzgun: {
+    keywords: [
+        "üzgünüm",
+        "üzgün hissediyorum",
+        "çok üzgünüm",
+        "moralim bozuk",
+        "kendimi kötü hissediyorum",
+        "canım sıkkın",
+        "keyfim yok",
+        "ağlamak istiyorum",
+        "bugün kötü hissediyorum",
+        "mutsuzum"
+    ],
+
+    replies: [
+        "💛 Bunu duyduğuma üzüldüm. İstersen bana anlatabilirsin.",
+        "🐝 Bazen böyle hissetmek normaldir. Seni dinlemeye hazırım.",
+        "🌸 Umarım kendini yakında daha iyi hissedersin.",
+        "🍯 Yalnız değilsin, istersen konuşabiliriz.",
+        "💖 Kendine karşı nazik olmayı unutma.",
+        "🌼 İçini dökmek istersen buradayım.",
+        "🐝 Umarım seni biraz olsun rahatlatabilirim.",
+        "✨ Her kötü gün sonsuza kadar sürmez.",
+        "💛 Yanındayım, anlatmak istersen seni dinlerim.",
+        "🍀 Umarım yarın bugünden daha güzel geçer."
+    ]
+},
   sinirli: [],
   kaygi: [],
   yalnizlik: [],
