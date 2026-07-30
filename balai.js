@@ -58,21 +58,23 @@ function addMessage(type, text) {
 
     scrollBottom();
 }
-document.getElementById("headerStatus").textContent =
-"💛 Seni dinliyor...";
 function typing(callback) {
-document.getElementById("headerStatus").textContent =
-"✍🏻 Yazıyor...";
+
+    document.getElementById("headerStatus").textContent =
+    "✍🏻 Yazıyor...";
+
     addMessage("bal", "🐝 Yazıyor...");
 
-    const typingMessage =
-        messages.lastElementChild;
+    const typingMessage = messages.lastElementChild;
 
     setTimeout(() => {
 
         typingMessage.remove();
 
         callback();
+
+        document.getElementById("headerStatus").textContent =
+        "💛 Seni dinliyor...";
 
     }, 900);
 
