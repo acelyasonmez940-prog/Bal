@@ -7,7 +7,6 @@
 <title>🐝 Bal AI</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -28,20 +27,14 @@
 
 <section id="welcomeScreen" class="welcome">
 
-<button class="user-card" onclick="selectUser('Açi')">
-
-<h2>🩷 Açi</h2>
-
+<button class="user-card" id="userAci">
+<h2>🩷 Açı</h2>
 <span>Merhaba Bal 💗</span>
-
 </button>
 
-<button class="user-card blue" onclick="selectUser('Bolatinyo')">
-
+<button class="user-card blue" id="userBolatinyo">
 <h2>💙 Bolatinyo</h2>
-
 <span>Selam Bal 🍯</span>
-
 </button>
 
 </section>
@@ -49,32 +42,27 @@
 <section id="chatScreen" class="chat-screen" style="display:none;">
 
 <div id="messages" class="messages">
-
-<div class="message bal">
-
-🐝 Merhaba! Ben Bal.
-
 </div>
 
-</div>
 <div id="quickActions" class="quick-actions" style="display:none;">
 
-    <div class="quick-title">
-        💛 Belki bunlardan biri iyi gelebilir.
-    </div>
+<div class="quick-title">
+💛 Belki bunlardan biri iyi gelebilir.
+</div>
 
-    <div id="quickButtons"></div>
+<div id="quickButtons"></div>
 
 </div>
+
 <div class="chat-input">
 
 <input
-type="text"
 id="messageInput"
+type="text"
 placeholder="Mesaj yaz..."
 >
 
-<button onclick="sendMessage()">
+<button id="sendButton">
 ➜
 </button>
 
@@ -85,5 +73,6 @@ placeholder="Mesaj yaz..."
 </div>
 
 <script type="module" src="balai.js"></script>
+
 </body>
 </html>
