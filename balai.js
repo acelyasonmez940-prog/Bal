@@ -1,4 +1,5 @@
 import responses from "./responses.js";
+alert("BALAI.JS YÜKLENDİ");
 
 // ===========================
 // BAL AI v3
