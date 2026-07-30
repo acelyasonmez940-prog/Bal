@@ -127,7 +127,6 @@ document.getElementById("headerStatus").textContent = `💛 ${name} ile sohbet e
 
 function findResponse(text) {
 
-    for (const key in responses) {
         if (text === "ben kimim") {
     return memory.name
         ? `💛 Senin adın ${memory.name}.`
@@ -139,7 +138,7 @@ if (text === "en sevdiğim renk ne") {
         ? `🎨 En sevdiğin renk ${memory.favoriteColor}.`
         : "🐝 Bana henüz söylemedin.";
 }
-
+  for (const key in responses) {
         const item = responses[key];
 
         if (
