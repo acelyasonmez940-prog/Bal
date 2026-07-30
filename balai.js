@@ -440,97 +440,92 @@ window.startGame = startGame;
 // Tahmin Oyunu
 // ===========================
 
-const oldSendMessage = sendMessage;
+// ===========================
+// OYUN DURUMU
+// ===========================
 
-sendMessage = function () {
+let gameState = null;
 
-    if (currentMode === "guess") {
+// ===========================
+// OYUNLAR
+// ===========================
 
-        const value = Number(input.value);
+function startGame(game) {
 
-        if (!input.value.trim()) return;
+    gameState = game;
 
-        addMessage("user", input.value);
+    if (game === "coin") {
 
-        input.value = "";
+        addMessage(
+            "bal",
+            `
+🪙 Yazı mı seçiyorsun, Tura mı?
 
-        if (value === guessNumber) {
+<br><br>
 
-            addMessage(
-                "bal",
-                "🎉 Doğru bildin!"
-            );
-
-            currentMode = "chat";
-
-        }
-
-        else if (value > guessNumber) {
-
-            addMessage(
-                "bal",
-                "📉 Daha küçük bir sayı dene."
-            );
-
-        }
-
-        else {
-
-            addMessage(
-                "bal",
-                "📈 Daha büyük bir sayı dene."
-            );
-
-        }
+<button onclick="coinFlip('yazı')">Yazı</button>
+<button onclick="coinFlip('tura')">Tura</button>
+`
+        );
 
         return;
+    }
+
+    if (game === "guess") {
+
+        gameState = {
+            type: "guess",
+            number: Math.floor(Math.random() * 10) + 1
+        };
+
+        addMessage(
+            "bal",
+            "🎯 1 ile 10 arasında bir sayı tuttum. Tahminini yaz."
+        );
+
+        return;
+    }
+
+    if (game === "riddle") {
+
+        gameState = {
+            type: "riddle",
+            answer: "uçak"
+        };
+
+        addMessage(
+            "bal",
+            "🤔 Bilmece: Kanadı var kuş değildir. Nedir?"
+        );
 
     }
 
-    if (currentMode === "riddle") {
+}
 
-        const answer =
-            input.value.trim().toLowerCase();
+function coinFlip(choice) {
 
-        addMessage("user", input.value);
+    const result =
+        Math.random() < 0.5 ? "yazı" : "tura";
 
-        input.value = "";
+    if (choice === result) {
 
-        if (
-            answer.includes("uçak")
-        ) {
+        addMessage(
+            "bal",
+            `🎉 Tebrikler! ${result} geldi ve bildin.`
+        );
 
-            addMessage(
-                "bal",
-                "🎉 Doğru cevap!"
-            );
+    } else {
 
-        }
-
-        else {
-
-            addMessage(
-                "bal",
-                "😄 Bilemedin. Cevap: Uçak."
-            );
-
-        }
-
-        currentMode = "chat";
-
-        return;
+        addMessage(
+            "bal",
+            `😄 ${result} geldi. Bu kez olmadı.`
+        );
 
     }
 
-    oldSendMessage();
+    gameState = null;
 
-};
+}
 
-// ===========================
-// Global
-// ===========================
-
-window.selectUser = selectUser;
-window.sendMessage = sendMessage;
-window.quickAction = quickAction;
 window.startGame = startGame;
+window.coinFlip = coinFlip;
