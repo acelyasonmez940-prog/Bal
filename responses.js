@@ -284,7 +284,37 @@ sinirli: {
         "🍀 Umarım içini biraz olsun rahatlatabilirim."
     ]
 },
-  yalnizlik: [],
+yalnizlik: {
+    keywords: [
+        "yalnızım",
+        "yalnız hissediyorum",
+        "tek başımayım",
+        "kimsem yok",
+        "yalnız kaldım",
+        "tekim",
+        "yalnızlık",
+        "kendimi yalnız hissediyorum",
+        "çok yalnızım",
+        "hep yalnızım",
+        "yalnız kalıyorum",
+        "yanımda kimse yok",
+        "tek başıma",
+        "yalnız olmak istemiyorum",
+        "yalnız hissediyorum"
+    ],
+    replies: [
+        "💛 Yalnız hissetmek gerçekten zor olabilir. İstersen biraz konuşabiliriz.",
+        "🐝 Şu an yanında olamasam da seni dinlemek için buradayım.",
+        "🌼 Hislerini paylaşmak istersen seni yargılamadan dinlerim.",
+        "🍯 Bazen yalnız hissetmek, kimsenin seni önemsemediği anlamına gelmez.",
+        "✨ Umarım çok yakında seni gülümsetecek güzel insanlar ve anlar çıkar karşına.",
+        "💛 Bu duyguyu tek başına taşımak zorunda değilsin. Anlatmak istersen seni dinlerim.",
+        "🐝 Bazen sadece biriyle konuşmak bile insanın içini biraz rahatlatabilir.",
+        "🌷 Kendine karşı nazik olmayı unutma. Sen değerlisin.",
+        "🍀 Bugün zor geçiyor olabilir ama bu his sonsuza kadar sürmeyecek.",
+        "🤍 Şu an yalnız hissediyor olsan bile, bu sohbeti birlikte sürdürüyoruz."
+    ]
+},
   motivasyon: [],
 destek: {
     keywords: [
