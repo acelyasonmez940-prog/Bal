@@ -81,9 +81,10 @@ function typing(callback) {
 
 function selectUser(name) {
 
-   document.getElementById("headerStatus").textContent =
-`💛 ${name} ile sohbet ediyor`; currentUser = name;
-    
+    currentUser = name;
+
+    document.getElementById("headerStatus").textContent =
+    `💛 ${name} ile sohbet ediyor`;
 
     welcomeScreen.style.display = "none";
     chatScreen.style.display = "flex";
@@ -94,7 +95,6 @@ function selectUser(name) {
         "bal",
         `🐝 Merhaba <b>${name}</b> 💛<br><br>Ben Bal! Bugün nasılsın?`
     );
-
 }
 
 // ===========================
