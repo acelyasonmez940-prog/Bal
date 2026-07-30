@@ -833,12 +833,192 @@ yemek: {
 },
 
   // 🎉 Eğlence
-  mizah: [],
-  oyun: [],
-  bulmaca: [],
-  film: [],
-  muzik: [],
-  kitap: [],
+  mizah: {
+    keywords: [
+        "şaka",
+        "komik",
+        "güldür",
+        "espri",
+        "mizah",
+        "fıkra",
+        "beni güldür",
+        "çok sıkıldım",
+        "komiklik yap",
+        "komik misin",
+        "şaka yap",
+        "kahkaha",
+        "gülmek istiyorum",
+        "eğlence",
+        "espiri yap"
+    ],
+    replies: [
+        "😂 Gülmek bazen günün en güzel ilacı olabilir.",
+        "🐝 Ben de arada küçük espriler yapmayı seviyorum.",
+        "😄 Umarım bugün bol bol gülersin.",
+        "🤣 Bir gülümseme bile bazen her şeyi değiştirebilir.",
+        "🎭 Eğlenmek de dinlenmenin bir yoludur.",
+        "😆 Seni güldürebildiysem ne mutlu bana!",
+        "🐝 Komik bir anını benimle paylaşmak ister misin?",
+        "😁 Bence biraz kahkaha herkese iyi gelir.",
+        "😄 Bugün yüzünde bir tebessüm olsun.",
+        "🎉 Hayat bazen gülünce daha güzel geliyor."
+    ]
+},
+  oyun: {
+    keywords: [
+        "oyun",
+        "oyun oynuyorum",
+        "oyun öner",
+        "minecraft",
+        "roblox",
+        "valorant",
+        "cs",
+        "lol",
+        "pubg",
+        "mobile legends",
+        "brawl stars",
+        "fortnite",
+        "oyuncu",
+        "gaming",
+        "konsol",
+        "bilgisayar oyunu",
+        "telefon oyunu",
+        "playstation",
+        "xbox",
+        "steam"
+    ],
+    replies: [
+        "🎮 Oyun oynamak güzel bir mola olabilir.",
+        "🐝 En sevdiğin oyun hangisi?",
+        "🏆 İyi oyunlar ve bol eğlenceler!",
+        "🎲 Bazen arkadaşlarla oynamak daha da keyifli olur.",
+        "✨ Umarım güzel bir maç geçirirsin.",
+        "💛 Oyun oynarken arada dinlenmeyi de unutma.",
+        "🎮 Yeni oyunlar keşfetmek çok keyifli olabilir.",
+        "🐝 Bugün hangi oyunu oynadın?",
+        "🎯 İyi şanslar!",
+        "😄 Umarım bol bol eğlenirsin."
+    ]
+},
+bulmaca: {
+    keywords: [
+        "bulmaca",
+        "bilmece",
+        "zeka sorusu",
+        "bana bilmece sor",
+        "soru sor",
+        "mantık sorusu",
+        "zeka oyunu",
+        "ipucu",
+        "tahmin",
+        "beyin egzersizi"
+    ],
+    replies: [
+        "🧩 Bulmacalar zihni çalıştırmanın eğlenceli yollarından biridir.",
+        "🐝 İstersen sana bir bilmece sorabilirim.",
+        "🤔 Zor bir soru mu kolay bir soru mu istersin?",
+        "✨ Tahmin etmeyi sever misin?",
+        "💛 Birlikte çözmeye çalışabiliriz.",
+        "🧠 Beyin jimnastiği yapmak her zaman güzeldir.",
+        "🎯 Hazırsan başlayabiliriz!",
+        "🐝 İpucu istersen söylemen yeterli.",
+        "😄 Eminim çözebilirsin.",
+        "🌟 Hadi bakalım, sıra sende!"
+    ]
+},
+film: {
+    keywords: [
+        "film",
+        "film izliyorum",
+        "film öner",
+        "sinema",
+        "aksiyon filmi",
+        "komedi filmi",
+        "romantik film",
+        "korku filmi",
+        "animasyon",
+        "bilim kurgu",
+        "dram filmi",
+        "macera filmi",
+        "izleyecek film",
+        "film tavsiyesi",
+        "izledim"
+    ],
+    replies: [
+        "🎬 Film izlemek harika bir aktivite olabilir.",
+        "🍿 Patlamış mısır hazırsa film keyfi de başlasın!",
+        "🐝 En sevdiğin film türü hangisi?",
+        "✨ Güzel bir film bazen insanı bambaşka dünyalara götürür.",
+        "💛 Film önerisi istersen yardımcı olabilirim.",
+        "🎥 İzlediğin filmi bana da anlatabilirsin.",
+        "🍿 İyi seyirler!",
+        "🌟 Umarım izleyeceğin filmi seversin.",
+        "🎞️ Film keyfi gibisi yok.",
+        "😄 İyi eğlenceler!"
+    ]
+},
+muzik: {
+    keywords: [
+        "müzik",
+        "şarkı",
+        "şarkı öner",
+        "dinliyorum",
+        "spotify",
+        "playlist",
+        "albüm",
+        "rap",
+        "pop",
+        "rock",
+        "slow",
+        "klasik müzik",
+        "türkçe pop",
+        "yabancı şarkı",
+        "şarkıcı"
+    ],
+    replies: [
+        "🎵 Müzik ruh halini değiştirebilir.",
+        "🐝 En sevdiğin şarkı hangisi?",
+        "🎧 Müzik dinlemek harika bir mola olabilir.",
+        "✨ Yeni şarkılar keşfetmeyi sever misin?",
+        "💛 İstersen müzik önerileri de yapabilirim.",
+        "🎼 Her ruh haline uygun bir şarkı vardır.",
+        "🎤 Şu sıralar en çok ne dinliyorsun?",
+        "🌟 Umarım sevdiğin şarkılar hiç bitmez.",
+        "🎶 Müziğin gücü gerçekten bambaşka.",
+        "😄 Keyifli dinlemeler!"
+    ]
+},
+kitap: {
+    keywords: [
+        "kitap",
+        "kitap okuyorum",
+        "kitap öner",
+        "roman",
+        "hikaye",
+        "şiir",
+        "yazar",
+        "okumayı seviyorum",
+        "kütüphane",
+        "edebiyat",
+        "fantastik",
+        "polisiye",
+        "bilim kurgu kitap",
+        "kişisel gelişim",
+        "kitap tavsiyesi"
+    ],
+    replies: [
+        "📚 Kitaplar yeni dünyaların kapısını aralayabilir.",
+        "🐝 En sevdiğin kitap hangisi?",
+        "💛 Okumak çok güzel bir alışkanlıktır.",
+        "✨ Yeni bir kitap keşfetmek heyecan verici olabilir.",
+        "📖 İstersen kitap önerileri de yapabilirim.",
+        "🌼 Her kitabın anlatacak farklı bir hikâyesi vardır.",
+        "📚 Şu an hangi kitabı okuyorsun?",
+        "🤍 Umarım okuduğun kitabı seversin.",
+        "🐝 Kitaplar bazen en iyi yol arkadaşları olabilir.",
+        "🌟 Keyifli okumalar!"
+    ]
+},
 
   // 🌍 Günlük Yaşam
   havaDurumu: [],
