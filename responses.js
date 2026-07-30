@@ -392,7 +392,30 @@ iltifat: {
         "💛 Güzel düşüncelerin için teşekkür ederim."
     ]
 },
-  ozlem: [],
+ozlem: {
+    keywords: [
+        "özledim",
+        "özlüyorum",
+        "çok özledim",
+        "aklımda",
+        "onu özledim",
+        "eskiyi özlüyorum",
+        "eskileri özledim",
+        "burnumda tütüyor",
+        "hasret kaldım",
+        "özlem"
+    ],
+    replies: [
+        "💛 Özlemek bazen sevgiyi, bazen de güzel anıları hatırlatır.",
+        "🐝 Umarım özlediğin kişi ya da günler sana yeniden güzel anılar getirir.",
+        "🌼 Özlemek zor olabilir ama hissettiklerin çok doğal.",
+        "✨ Bazen özlem zamanla hafifler, bazen de güzel bir tebessüme dönüşür.",
+        "🍯 İstersen bana kimi ya da neyi özlediğini anlatabilirsin.",
+        "💛 İçinde kalanları paylaşmak istersen seni dinlerim.",
+        "🐝 Bazı insanlar ve anılar kalbimizde özel bir yer edinir.",
+        "🌷 Umarım en kısa zamanda özlemini biraz olsun giderecek güzel bir gelişme yaşarsın."
+    ]
+},
 
   // 👨‍👩‍👦 Hayat
   aile: [],
