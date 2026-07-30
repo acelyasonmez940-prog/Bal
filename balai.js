@@ -7,6 +7,24 @@ import responses from "./responses.js";
 let currentUser = "";
 let lastReply = "";
 let currentMode = "chat";
+// ===========================
+// BAL HAFIZASI
+// ===========================
+
+let memory = JSON.parse(localStorage.getItem("balMemory")) || {
+    name: "",
+    age: "",
+    city: "",
+    favoriteColor: "",
+    favoriteFood: "",
+    favoriteAnimal: "",
+    favoriteGame: "",
+    favoriteMusic: ""
+};
+
+function saveMemory() {
+    localStorage.setItem("balMemory", JSON.stringify(memory));
+}
 
 const welcomeScreen = document.getElementById("welcomeScreen");
 const chatScreen = document.getElementById("chatScreen");
