@@ -58,7 +58,8 @@ function addMessage(type, text) {
 
     scrollBottom();
 }
-
+document.getElementById("headerStatus").textContent =
+"💛 Seni dinliyor...";
 function typing(callback) {
 document.getElementById("headerStatus").textContent =
 "✍🏻 Yazıyor...";
