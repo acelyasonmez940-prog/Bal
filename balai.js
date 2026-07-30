@@ -183,20 +183,24 @@ if (text === "en sevdiğim renk ne") {
 // ===========================
 
 function sendMessage() {
-    let memory = JSON.parse(localStorage.getItem("balMemory")) || {
-    name: "",
-    age: "",
-    city: "",
-    favoriteColor: "",
-    favoriteFood: "",
-    favoriteAnimal: "",
-    favoriteGame: "",
-    favoriteMusic: ""
-};
 
-function saveMemory() {
-    localStorage.setItem("balMemory", JSON.stringify(memory));
-}
+    const original = input.value.trim();
+
+    if (!original) return;
+
+    const text = original.toLowerCase();
+
+    if (text.includes("adım ")) {
+        memory.name = original.split("adım ")[1];
+        saveMemory();
+    }
+
+    if (text.includes("en sevdiğim renk ")) {
+        memory.favoriteColor = original.split("en sevdiğim renk ")[1];
+        saveMemory();
+    }
+
+    // ...
 
     const original = input.value.trim();
 
