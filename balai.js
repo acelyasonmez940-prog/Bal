@@ -60,7 +60,8 @@ function addMessage(type, text) {
 }
 
 function typing(callback) {
-
+document.getElementById("headerStatus").textContent =
+"✍🏻 Yazıyor...";
     addMessage("bal", "🐝 Yazıyor...");
 
     const typingMessage =
