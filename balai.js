@@ -138,7 +138,60 @@ function sendMessage() {
     if (!original) return;
 
     const text = original.toLowerCase();
+    
+// ===========================
+// Oyun Mesajları
+// ===========================
 
+if (gameState) {
+
+    if (gameState.type === "guess") {
+
+        const guess = Number(original);
+
+        if (guess === gameState.number) {
+
+            addMessage("user", original);
+            input.value = "";
+
+            addMessage("bal", "🎉 Doğru bildin!");
+
+            gameState = null;
+            return;
+        }
+
+        addMessage("user", original);
+        input.value = "";
+
+        if (guess > gameState.number) {
+            addMessage("bal", "📉 Daha küçük bir sayı dene.");
+        } else {
+            addMessage("bal", "📈 Daha büyük bir sayı dene.");
+        }
+
+        return;
+    }
+
+    if (gameState.type === "riddle") {
+
+        addMessage("user", original);
+        input.value = "";
+
+        if (text.includes(gameState.answer)) {
+
+            addMessage("bal", "🎉 Doğru cevap!");
+
+        } else {
+
+            addMessage("bal", "😄 Bilemedin. Cevap: Uçak.");
+
+        }
+
+        gameState = null;
+        return;
+    }
+
+}
     addMessage("user", original);
 
     input.value = "";
