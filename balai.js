@@ -110,6 +110,31 @@ document.getElementById("headerStatus").textContent = `💛 ${name} ile sohbet e
 function findResponse(text) {
 
     for (const key in responses) {
+        if (text === "ben kimim") {
+    addMessage("user", original);
+    input.value = "";
+    typing(() => {
+        addMessage("bal",
+            memory.name
+                ? `💛 Senin adın ${memory.name}.`
+                : "🐝 Bana henüz adını söylemedin."
+        );
+    });
+    return;
+}
+
+if (text === "en sevdiğim renk ne") {
+    addMessage("user", original);
+    input.value = "";
+    typing(() => {
+        addMessage("bal",
+            memory.favoriteColor
+                ? `🎨 En sevdiğin renk ${memory.favoriteColor}.`
+                : "🐝 Bana henüz söylemedin."
+        );
+    });
+    return;
+}
 
         const item = responses[key];
 
