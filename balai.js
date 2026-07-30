@@ -1,54 +1,122 @@
 import responses from "./responses.js";
 
+// ===========================
+// BAL AI v3
+// ===========================
+
 let currentUser = "";
 let lastReply = "";
 let currentMode = "chat";
-function getRandomReply(list) {
-    if (!list || list.length === 0) return "";
+
+const welcomeScreen = document.getElementById("welcomeScreen");
+const chatScreen = document.getElementById("chatScreen");
+const messages = document.getElementById("messages");
+const input = document.getElementById("messageInput");
+const sendButton = document.getElementById("sendButton");
+
+const quickActions = document.getElementById("quickActions");
+const quickButtons = document.getElementById("quickButtons");
+const quickTitle = document.querySelector(".quick-title");
+
+// ===========================
+// Yardımcı Fonksiyonlar
+// ===========================
+
+function scrollBottom() {
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function randomReply(list) {
+
+    if (!list || list.length === 0) {
+        return "";
+    }
 
     let reply;
 
     do {
+
         reply = list[Math.floor(Math.random() * list.length)];
-    } while (reply === lastReply && list.length > 1);
+
+    } while (
+        reply === lastReply &&
+        list.length > 1
+    );
 
     lastReply = reply;
+
     return reply;
 }
 
-function selectUser(name) {
-    currentUser = name;
+function addMessage(type, text) {
 
-    document.getElementById("welcomeScreen").style.display = "none";
-    document.getElementById("chatScreen").style.display = "flex";
-
-    document.getElementById("messages").innerHTML = `
-        <div class="message bal">
-            🐝 Merhaba <b>${name}</b> 💛<br><br>
-            Ben Bal! Bugün nasılsın?
+    messages.innerHTML += `
+        <div class="message ${type}">
+            ${text}
         </div>
     `;
+
+    scrollBottom();
 }
+
+function typing(callback) {
+
+    addMessage("bal", "🐝 Yazıyor...");
+
+    const typingMessage =
+        messages.lastElementChild;
+
+    setTimeout(() => {
+
+        typingMessage.remove();
+
+        callback();
+
+    }, 900);
+
+}
+// ===========================
+// Kullanıcı Seçimi
+// ===========================
+
+function selectUser(name) {
+
+    currentUser = name;
+
+    welcomeScreen.style.display = "none";
+    chatScreen.style.display = "flex";
+
+    messages.innerHTML = "";
+
+    addMessage(
+        "bal",
+        `🐝 Merhaba <b>${name}</b> 💛<br><br>Ben Bal! Bugün nasılsın?`
+    );
+
+}
+
+// ===========================
+// Cevap Bul
+// ===========================
 
 function findResponse(text) {
 
     for (const key in responses) {
 
-        const category = responses[key];
+        const item = responses[key];
 
         if (
-            category &&
-            typeof category === "object" &&
-            Array.isArray(category.keywords) &&
-            Array.isArray(category.replies)
+            item &&
+            Array.isArray(item.keywords) &&
+            Array.isArray(item.replies)
         ) {
 
-            if (
-                category.keywords.some(keyword =>
-                    text.includes(keyword.toLowerCase())
-                )
-            ) {
-                return getRandomReply(category.replies);
+            const found = item.keywords.some(keyword =>
+                text.includes(keyword.toLowerCase())
+            );
+
+            if (found) {
+                return randomReply(item.replies);
             }
 
         }
@@ -56,246 +124,413 @@ function findResponse(text) {
     }
 
     return "";
+
 }
+
+// ===========================
+// Mesaj Gönder
+// ===========================
 
 function sendMessage() {
 
-    const input = document.getElementById("messageInput");
+    const original = input.value.trim();
 
-    if (input.value.trim() === "") return;
+    if (!original) return;
 
-    const originalText = input.value;
-    const text = originalText.toLowerCase().trim();
+    const text = original.toLowerCase();
 
-    const messages = document.getElementById("messages");
+    addMessage("user", original);
 
-    messages.innerHTML += `
-        <div class="message user">
-            ${originalText}
-        </div>
-    `;
-        input.value = "";
+    input.value = "";
 
-    let cevap = findResponse(text);
-    const quickActions = document.getElementById("quickActions");
+    quickActions.style.display = "none";
 
-quickActions.style.display = "none";
+    let reply = findResponse(text);
 
-if (text.includes("üzgün") || text.includes("moral")) {
-    showQuickActions("uzgun");
-}
-
-else if (
-    text.includes("sinir") ||
-    text.includes("öfke") ||
-    text.includes("kızgın")
-) {
-    showQuickActions("sinirli");
-}
-
-else if (
-    text.includes("mutlu") ||
-    text.includes("sevindim") ||
-    text.includes("harikayım")
-) {
-    showQuickActions("mutlu");
-}
-    if (!cevap) {
+    if (!reply) {
 
         if (text.includes("nasılsın")) {
-            cevap = "🐝 Ben çok iyiyim! Sen nasılsın? 💛";
-        }
 
-        else if (text.includes("seni seviyorum")) {
-            cevap = `🥹 Ben de seni çok seviyorum ${currentUser}! 💛`;
+            reply = "🐝 Ben çok iyiyim! Sen nasılsın? 💛";
+
         }
 
         else if (text.includes("teşekkür")) {
-            cevap = "💛 Rica ederim. Her zaman buradayım.";
+
+            reply = "💛 Rica ederim.";
+
         }
 
-        else if (
-            text.includes("iyi geceler") ||
-            text.includes("iyi geceler bal")
-        ) {
-            cevap = "🌙 Sana huzurlu geceler diliyorum. Tatlı rüyalar. 🐝";
+        else if (text.includes("seni seviyorum")) {
+
+            reply = `🥹 Ben de seni çok seviyorum ${currentUser}!`;
+
         }
 
         else if (
             text.includes("görüşürüz") ||
-            text.includes("bay") ||
             text.includes("bye")
         ) {
-            cevap = "👋 Görüşürüz! Kendine iyi bak. 💛";
+
+            reply = "👋 Görüşürüz! Kendine iyi bak.";
+
         }
 
         else {
-            cevap = `🐝 Seni dinliyorum ${currentUser} 💕`;
+
+            reply = `🐝 Seni dinliyorum ${currentUser}.`;
+
         }
 
     }
 
-    messages.innerHTML += `
-        <div class="message bal" id="typing">
-            🐝 Yazıyor...
-        </div>
-    `;
+    typing(() => {
 
-    messages.scrollTop = messages.scrollHeight;
+        addMessage("bal", reply);
 
-    setTimeout(() => {
-            const typing = document.getElementById("typing");
+        checkQuickActions(text);
 
-        if (typing) {
-            typing.remove();
-        }
-
-        messages.innerHTML += `
-            <div class="message bal">
-                ${cevap}
-            </div>
-        `;
-
-        messages.scrollTop = messages.scrollHeight;
-
-    }, 900);
+    });
 
 }
-document.addEventListener("DOMContentLoaded", () => {
+// ===========================
+// Hızlı Aksiyonlar
+// ===========================
 
-    const input = document.getElementById("messageInput");
+function checkQuickActions(text) {
 
-    if (input) {
+    if (
+        text.includes("üzgün") ||
+        text.includes("moral") ||
+        text.includes("kötüyüm")
+    ) {
 
-        input.addEventListener("keypress", function (e) {
-
-            if (e.key === "Enter") {
-                sendMessage();
-            }
-
-        });
-
+        showQuickActions("sad");
     }
 
-});
+    else if (
+        text.includes("mutlu") ||
+        text.includes("çok iyiyim") ||
+        text.includes("harikayım")
+    ) {
 
-window.selectUser = selectUser;
-window.sendMessage = sendMessage;
+        showQuickActions("happy");
+    }
+
+    else if (
+        text.includes("sinir") ||
+        text.includes("öfke") ||
+        text.includes("kızgın")
+    ) {
+
+        showQuickActions("angry");
+    }
+
+}
+
 function showQuickActions(type) {
 
-    const box = document.getElementById("quickActions");
-    const title = document.querySelector(".quick-title");
+    quickButtons.innerHTML = "";
 
-    let buttons = "";
+    quickActions.style.display = "flex";
 
-    if (type === "uzgun") {
+    if (type === "sad") {
 
-        title.innerHTML = "💛 Belki bunlardan biri sana iyi gelebilir.";
+        quickTitle.innerHTML =
+            "💛 Belki bunlardan biri iyi gelir.";
 
-        buttons = `
-            <button onclick="quickAction('sohbet')">💬 Anlatmak İstiyorum</button>
-            <button onclick="quickAction('oyun')">🎲 Oyun Oyna</button>
+        quickButtons.innerHTML = `
+            <button onclick="quickAction('talk')">💬 Sohbet Edelim</button>
+            <button onclick="quickAction('game')">🎲 Oyun Oyna</button>
         `;
 
     }
 
-    else if (type === "sinirli") {
+    else if (type === "happy") {
 
-        title.innerHTML = "🌼 Biraz kafa dağıtmak ister misin?";
+        quickTitle.innerHTML =
+            "🎉 Harika! Devam edelim.";
 
-        buttons = `
-            <button onclick="quickAction('fikra')">😂 Fıkra</button>
-            <button onclick="quickAction('bilmece')">🤔 Bilmece</button>
-        `;
-
-    }
-
-    else if (type === "mutlu") {
-
-        title.innerHTML = "🎉 Bu güzel enerjiyi birlikte devam ettirelim!";
-
-        buttons = `
-            <button onclick="quickAction('oyun')">🎲 Oyun Oyna</button>
-            <button onclick="quickAction('bilmece')">🧩 Bilmece</button>
+        quickButtons.innerHTML = `
+            <button onclick="quickAction('game')">🎲 Oyun Oyna</button>
+            <button onclick="quickAction('riddle')">🧩 Bilmece</button>
         `;
 
     }
 
     else {
 
-        title.innerHTML = "💛 Belki bunlardan biri iyi gelebilir.";
+        quickTitle.innerHTML =
+            "🌼 Biraz kafa dağıtalım.";
 
-        buttons = `
-            <button onclick="quickAction('sohbet')">💬 Sohbet Edelim</button>
+        quickButtons.innerHTML = `
+            <button onclick="quickAction('joke')">😂 Fıkra</button>
+            <button onclick="quickAction('game')">🎲 Oyun</button>
         `;
 
     }
 
-    document.getElementById("quickButtons").innerHTML = buttons;
-
-    box.style.display = "flex";
 }
-  
+
 function quickAction(type) {
 
-    const messages = document.getElementById("messages");
+    switch (type) {
 
-    let cevap = "";
+        case "talk":
 
-if (type === "oyun") {
+            addMessage(
+                "bal",
+                "💛 Seni dinliyorum. İstediğin kadar anlatabilirsin."
+            );
 
-    currentMode = "games";
+            break;
 
-    cevap = `
-🎲 Harika seçim!
+        case "joke":
 
-🐝 Hangi oyunu oynamak istersin?
+            addMessage(
+                "bal",
+                "😂 Fıkra sistemi çok yakında eklenecek."
+            );
+
+            break;
+
+        case "riddle":
+
+            addMessage(
+                "bal",
+                "🤔 Bilmece sistemi bir sonraki bölümde gelecek."
+            );
+
+            break;
+
+        case "game":
+
+            currentMode = "games";
+
+            addMessage(
+                "bal",
+                `
+🎲 Bir oyun seç!
+
+<br><br>
 
 <button onclick="startGame('coin')">🪙 Yazı Tura</button>
+
 <button onclick="startGame('guess')">🎯 Sayı Tahmini</button>
+
 <button onclick="startGame('riddle')">🤔 Bilmece</button>
-`;
+`
+            );
+
+            break;
+
+    }
+
 }
 
-    else if (type === "fikra") {
-        cevap = "😂 Bir fıkra hazırlıyorum! Çok yakında burada olacak.";
+// ===========================
+// Eventler
+// ===========================
+
+sendButton.addEventListener("click", sendMessage);
+
+input.addEventListener("keypress", e => {
+
+    if (e.key === "Enter") {
+        sendMessage();
     }
 
-    else if (type === "bilmece") {
-        cevap = "🤔 Bilmece modu yakında geliyor!";
-    }
+});
 
-    else if (type === "sohbet") {
-        cevap = "💛 Tabii. Seni dinliyorum, anlat bakalım.";
-    }
+document.getElementById("userAci")
+    .addEventListener("click", () => selectUser("Açı"));
 
-    messages.innerHTML += `
-        <div class="message bal">
-            ${cevap}
-        </div>
-    `;
+document.getElementById("userBolatinyo")
+    .addEventListener("click", () => selectUser("Bolatinyo"));
 
-    messages.scrollTop = messages.scrollHeight;
-}
+window.quickAction = quickAction;
+// ===========================
+// Oyun Sistemi
+// ===========================
+
+let guessNumber = null;
+
 function startGame(game) {
 
     currentMode = game;
 
-    const messages = document.getElementById("messages");
+    switch (game) {
 
-    if (game === "coin") {
+        case "coin":
 
-        messages.innerHTML += `
-        <div class="message bal">
-            🪙 Güzel seçim!<br><br>
-            Yazı mı seçiyorsun yoksa Tura mı?
-        </div>
-        `;
+            addMessage(
+                "bal",
+                `
+🪙 Yazı mı seçiyorsun, Tura mı?
+
+<br><br>
+
+<button onclick="coinFlip('yazı')">Yazı</button>
+
+<button onclick="coinFlip('tura')">Tura</button>
+`
+            );
+
+            break;
+
+        case "guess":
+
+            guessNumber = Math.floor(Math.random() * 10) + 1;
+
+            addMessage(
+                "bal",
+                "🎯 1 ile 10 arasında bir sayı tuttum. Tahminini yaz!"
+            );
+
+            break;
+
+        case "riddle":
+
+            addMessage(
+                "bal",
+                `
+🤔 Bilmece:
+
+Kanadı var kuş değildir.
+
+Nedir?
+`
+            );
+
+            break;
+
     }
 
-    messages.scrollTop = messages.scrollHeight;
 }
 
+function coinFlip(choice) {
+
+    const result =
+        Math.random() < 0.5 ? "yazı" : "tura";
+
+    if (choice === result) {
+
+        addMessage(
+            "bal",
+            `🎉 Tebrikler! ${result} geldi ve bildin.`
+        );
+
+    }
+
+    else {
+
+        addMessage(
+            "bal",
+            `😄 ${result} geldi. Bu kez olmadı.`
+        );
+
+    }
+
+}
+
+window.coinFlip = coinFlip;
 window.startGame = startGame;
 
+// ===========================
+// Tahmin Oyunu
+// ===========================
+
+const oldSendMessage = sendMessage;
+
+sendMessage = function () {
+
+    if (currentMode === "guess") {
+
+        const value = Number(input.value);
+
+        if (!input.value.trim()) return;
+
+        addMessage("user", input.value);
+
+        input.value = "";
+
+        if (value === guessNumber) {
+
+            addMessage(
+                "bal",
+                "🎉 Doğru bildin!"
+            );
+
+            currentMode = "chat";
+
+        }
+
+        else if (value > guessNumber) {
+
+            addMessage(
+                "bal",
+                "📉 Daha küçük bir sayı dene."
+            );
+
+        }
+
+        else {
+
+            addMessage(
+                "bal",
+                "📈 Daha büyük bir sayı dene."
+            );
+
+        }
+
+        return;
+
+    }
+
+    if (currentMode === "riddle") {
+
+        const answer =
+            input.value.trim().toLowerCase();
+
+        addMessage("user", input.value);
+
+        input.value = "";
+
+        if (
+            answer.includes("uçak")
+        ) {
+
+            addMessage(
+                "bal",
+                "🎉 Doğru cevap!"
+            );
+
+        }
+
+        else {
+
+            addMessage(
+                "bal",
+                "😄 Bilemedin. Cevap: Uçak."
+            );
+
+        }
+
+        currentMode = "chat";
+
+        return;
+
+    }
+
+    oldSendMessage();
+
+};
+
+// ===========================
+// Global
+// ===========================
+
+window.selectUser = selectUser;
+window.sendMessage = sendMessage;
 window.quickAction = quickAction;
+window.startGame = startGame;
