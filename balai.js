@@ -60,8 +60,8 @@ function addMessage(type, text) {
 }
 function typing(callback) {
 
-document.getElementById("headerStatus").style.color = "red";
-document.getElementById("headerStatus").textContent = "TEST";
+document.getElementById("headerStatus").textContent =
+"💛 Seni dinliyor...";
 
     addMessage("bal", "🐝 Yazıyor...");
 
