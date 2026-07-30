@@ -146,6 +146,25 @@ function sendMessage() {
     if (!original) return;
 
     const text = original.toLowerCase();
+    if (text.includes("adım ")) {
+    memory.name = original.split("adım ")[1];
+}
+
+if (text.includes("en sevdiğim renk ")) {
+    memory.favoriteColor = original.split("en sevdiğim renk ")[1];
+}
+
+if (text.includes("en sevdiğim yemek ")) {
+    memory.favoriteFood = original.split("en sevdiğim yemek ")[1];
+}
+
+if (text.includes("en sevdiğim hayvan ")) {
+    memory.favoriteAnimal = original.split("en sevdiğim hayvan ")[1];
+}
+
+if (text.includes("izmirliyim")) {
+    memory.city = "İzmir";
+}
     
 // ===========================
 // Oyun Mesajları
