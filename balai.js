@@ -60,23 +60,27 @@ function addMessage(type, text) {
 }
 function typing(callback) {
 
-document.getElementById("headerStatus").textContent =
-"💛 Seni dinliyor...";
+    document.getElementById("headerStatus").textContent =
+    "✍🏻 Yazıyor...";
 
-    addMessage("bal", "🐝 Yazıyor...");
+    requestAnimationFrame(() => {
 
-    const typingMessage = messages.lastElementChild;
+        addMessage("bal", "🐝 Yazıyor...");
 
-    setTimeout(() => {
+        const typingMessage = messages.lastElementChild;
 
-        typingMessage.remove();
+        setTimeout(() => {
 
-        callback();
+            typingMessage.remove();
 
-        document.getElementById("headerStatus").textContent =
-        "💛 Seni dinliyor...";
+            callback();
 
-    }, 900);
+            document.getElementById("headerStatus").textContent =
+            "💛 Seni dinliyor...";
+
+        }, 900);
+
+    });
 
 }
 // ===========================
