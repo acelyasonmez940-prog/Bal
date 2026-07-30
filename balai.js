@@ -60,10 +60,11 @@ function addMessage(type, text) {
 }
 function typing(callback) {
 
-    document.getElementById("headerStatus").textContent =
-    "✍🏻 Yazıyor...";
+    const status = document.getElementById("headerStatus");
 
-    requestAnimationFrame(() => {
+    status.textContent = "✍🏻 Yazıyor...";
+
+    setTimeout(() => {
 
         addMessage("bal", "🐝 Yazıyor...");
 
@@ -75,12 +76,11 @@ function typing(callback) {
 
             callback();
 
-            document.getElementById("headerStatus").textContent =
-            "💛 Seni dinliyor...";
+            status.textContent = "💛 Seni dinliyor...";
 
         }, 900);
 
-    });
+    }, 50);
 
 }
 // ===========================
