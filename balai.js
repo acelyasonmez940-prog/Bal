@@ -60,8 +60,8 @@ function addMessage(type, text) {
 }
 function typing(callback) {
 
-    document.getElementById("headerStatus").textContent =
-    "✍🏻 Yazıyor...";
+document.getElementById("headerStatus").style.color = "red";
+document.getElementById("headerStatus").textContent = "TEST";
 
     addMessage("bal", "🐝 Yazıyor...");
 
