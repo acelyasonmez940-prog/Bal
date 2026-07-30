@@ -442,11 +442,15 @@ input.addEventListener("keypress", e => {
 
 });
 
-document.getElementById("userAci")
-    .addEventListener("click", () => selectUser("Açı"));
+window.selectUser = selectUser;
 
-document.getElementById("userBolatinyo")
-    .addEventListener("click", () => selectUser("Bolatinyo"));
+document.getElementById("userAci").onclick = function () {
+    selectUser("Açı");
+};
+
+document.getElementById("userBolatinyo").onclick = function () {
+    selectUser("Bolatinyo");
+};
 
 window.quickAction = quickAction;
 
