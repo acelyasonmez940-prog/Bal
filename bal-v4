@@ -1,1 +1,41 @@
-d
+// ===========================
+// BAL AI v4
+// İlk Test
+// ===========================
+
+const welcomeScreen = document.getElementById("welcomeScreen");
+const chatScreen = document.getElementById("chatScreen");
+
+const messages = document.getElementById("messages");
+
+function addMessage(type, text) {
+    messages.innerHTML += `
+        <div class="message ${type}">
+            ${text}
+        </div>
+    `;
+}
+
+function selectUser(name) {
+
+    document.getElementById("headerStatus").textContent =
+        `💛 ${name} ile sohbet ediyor`;
+
+    welcomeScreen.style.display = "none";
+    chatScreen.style.display = "flex";
+
+    messages.innerHTML = "";
+
+    addMessage(
+        "bal",
+        `🐝 Merhaba <b>${name}</b><br><br>Ben Bal! Bugün nasılsın?`
+    );
+}
+
+document.getElementById("userAci").onclick = () => {
+    selectUser("Açı");
+};
+
+document.getElementById("userBolatinyo").onclick = () => {
+    selectUser("Bolatinyo");
+};
