@@ -6,7 +6,8 @@ const welcomeScreen = document.getElementById("welcomeScreen");
 const chatScreen = document.getElementById("chatScreen");
 const messages = document.getElementById("messages");
 const headerStatus = document.getElementById("headerStatus");
-
+const input = document.getElementById("messageInput");
+const sendButton = document.getElementById("sendButton");
 function addMessage(type, text) {
     messages.innerHTML += `
         <div class="message ${type}">
@@ -88,3 +89,31 @@ function remember(text) {
 
     return null;
 }
+function sendMessage() {
+
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    addMessage("user", text);
+
+    input.value = "";
+
+    setTimeout(() => {
+
+        addMessage(
+            "bal",
+            "🐝 Seni duydum. Çok yakında sana cevap vermeyi de öğreneceğim. 💛"
+        );
+
+    }, 500);
+
+}
+
+sendButton.addEventListener("click", sendMessage);
+
+input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        sendMessage();
+    }
+});
