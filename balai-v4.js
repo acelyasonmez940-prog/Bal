@@ -36,3 +36,55 @@ aci.addEventListener("click", () => {
 bolatinyo.addEventListener("click", () => {
     selectUser("Bolatinyo");
 });
+// ===========================
+// Bal Hafızası
+// ===========================
+
+let memory = JSON.parse(localStorage.getItem("balMemory")) || {
+    name: "",
+    favoriteColor: "",
+    favoriteFood: "",
+    favoriteAnimal: "",
+    city: ""
+};
+
+function saveMemory() {
+    localStorage.setItem("balMemory", JSON.stringify(memory));
+}
+function remember(text) {
+
+    const original = text.trim();
+    const lower = original.toLowerCase();
+
+    if (lower.startsWith("adım ")) {
+        memory.name = original.substring(5);
+        saveMemory();
+        return "💛 Tanıştığımıza sevindim " + memory.name + "!";
+    }
+
+    if (lower.startsWith("en sevdiğim renk ")) {
+        memory.favoriteColor = original.substring(17);
+        saveMemory();
+        return "🎨 Tamam! En sevdiğin rengi unutmayacağım.";
+    }
+
+    if (lower.startsWith("en sevdiğim yemek ")) {
+        memory.favoriteFood = original.substring(18);
+        saveMemory();
+        return "🍝 Bunu da aklıma yazdım.";
+    }
+
+    if (lower.startsWith("en sevdiğim hayvan ")) {
+        memory.favoriteAnimal = original.substring(19);
+        saveMemory();
+        return "🐻 Ne güzel!";
+    }
+
+    if (lower.startsWith("izmirliyim")) {
+        memory.city = "İzmir";
+        saveMemory();
+        return "🌼 İzmir'i aklımda tutacağım.";
+    }
+
+    return null;
+}
