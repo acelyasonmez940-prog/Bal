@@ -227,10 +227,11 @@ if (memoryReply) {
 
 } else {
 
-    addMessage(
-        "bal",
-        "🐝 Seni duydum. 💛"
-    );
+    if (Math.random() < 0.35) {
+        addMessage("bal", askQuestion());
+    } else {
+        addMessage("bal", "🐝 Seni dinliyorum. 💛");
+    }
 
 }
     }, 500);
