@@ -86,7 +86,11 @@ function remember(text) {
     const lower = original.toLowerCase();
 
     if (lower.startsWith("adım ")) {
-        memory.name = original.substring(5).trim();
+const name = original.substring(5).trim();
+
+memory.name =
+    name.charAt(0).toUpperCase() +
+    name.slice(1).toLowerCase();
         saveMemory();
         return `💛 Tanıştığımıza sevindim <b>${memory.name}</b>!`;
     }
