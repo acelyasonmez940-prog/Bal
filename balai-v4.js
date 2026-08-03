@@ -86,7 +86,7 @@ function randomItem(array) {
 function getResponse(text) {
 
     const lower = text.toLowerCase();
-
+console.log(window.responses);
     for (const key in window.responses) {
 
         const item = window.responses[key];
