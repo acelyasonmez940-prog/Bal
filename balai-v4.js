@@ -309,6 +309,7 @@ function sendMessage() {
 
     const memoryReply = remember(text);
     const aiReply = getResponse(text);
+    addTyping();
     setTimeout(() => {
 if (memoryReply) {
 
