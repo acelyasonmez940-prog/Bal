@@ -269,7 +269,10 @@ if (memoryReply) {
 
 } else if (aiReply) {
 
-    addMessage("bal", aiReply);
+ addMessage(
+    "bal",
+    aiReply + getFollowQuestion(text)
+);
 
 } else {
 
