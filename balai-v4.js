@@ -276,6 +276,35 @@ if (memoryReply) {
     if (Math.random() < 0.35) {
 addMessage("bal", askQuestion(text));
     } else {
+        function getFollowQuestion(text) {
+
+    const lower = text.toLowerCase();
+
+    if (
+        lower.includes("üzgün") ||
+        lower.includes("moralim bozuk") ||
+        lower.includes("kötüyüm")
+    ) {
+        return "\n\n🌼 Seni en çok ne üzdü?";
+    }
+
+    if (
+        lower.includes("mutlu") ||
+        lower.includes("harikayım") ||
+        lower.includes("çok iyiyim")
+    ) {
+        return "\n\n✨ Seni en çok ne mutlu etti?";
+    }
+
+    if (
+        lower.includes("yoruldum") ||
+        lower.includes("yorgunum")
+    ) {
+        return "\n\n☕ Bugün seni en çok ne yordu?";
+    }
+
+    return "";
+}
         addMessage("bal", "🐝 Seni dinliyorum. 💛");
     }
 
