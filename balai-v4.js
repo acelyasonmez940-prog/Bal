@@ -115,8 +115,34 @@ const questionGroups = {
 
 };
 
-function askQuestion() {
-    return randomItem(randomQuestions);
+function askQuestion(text) {
+
+    const lower = text.toLowerCase();
+
+    if (
+        lower.includes("üzgün") ||
+        lower.includes("moralim bozuk") ||
+        lower.includes("kötüyüm")
+    ) {
+        return randomItem(questionGroups.sad);
+    }
+
+    if (
+        lower.includes("mutlu") ||
+        lower.includes("harikayım") ||
+        lower.includes("çok iyiyim")
+    ) {
+        return randomItem(questionGroups.happy);
+    }
+
+    if (
+        lower.includes("yoruldum") ||
+        lower.includes("yorgunum")
+    ) {
+        return randomItem(questionGroups.tired);
+    }
+
+    return randomItem(questionGroups.general);
 }
 function getResponse(text) {
 
