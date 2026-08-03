@@ -1,5 +1,19 @@
 console.log("BAL V4 ÇALIŞTI");
+// ===========================
+// BAL HAFIZASI
+// ===========================
 
+let memory = JSON.parse(localStorage.getItem("balMemory")) || {
+    name: "",
+    favoriteColor: "",
+    favoriteFood: "",
+    favoriteAnimal: "",
+    city: ""
+};
+
+function saveMemory() {
+    localStorage.setItem("balMemory", JSON.stringify(memory));
+}
 const aci = document.getElementById("userAci");
 const bolatinyo = document.getElementById("userBolatinyo");
 const welcomeScreen = document.getElementById("welcomeScreen");
