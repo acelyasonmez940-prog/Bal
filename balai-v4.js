@@ -182,7 +182,7 @@ function sendMessage() {
     input.value = "";
 
     const memoryReply = remember(text);
-
+const aiReply = getResponse(text);
     setTimeout(() => {
 
         if (memoryReply) {
