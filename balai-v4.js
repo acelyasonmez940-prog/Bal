@@ -305,7 +305,13 @@ addMessage("bal", askQuestion(text));
 
     return "";
 }
-        addMessage("bal", "🐝 Seni dinliyorum. 💛");
+    const follow = getFollowQuestion(text);
+
+if (follow) {
+    addMessage("bal", follow);
+} else {
+    addMessage("bal", "🐝 Seni dinliyorum. 💛");
+}
     }
 
 }
