@@ -139,6 +139,24 @@ if (lower.startsWith("en sevdiğim yemek ")) {
 
     return "🍕 Tamam! En sevdiğin yemeği aklıma yazdım.";
 }
+// En sevdiğim hayvan
+if (lower === "en sevdiğim hayvan ne" ||
+    lower === "en sevdiğim hayvan ne?") {
+
+    if (memory.favoriteAnimal) {
+        return `🐱 En sevdiğin hayvan <b>${memory.favoriteAnimal}</b>.`;
+    }
+
+    return "🥺 Bana henüz en sevdiğin hayvanı söylemedin.";
+}
+
+if (lower.startsWith("en sevdiğim hayvan ")) {
+
+    memory.favoriteAnimal = original.substring(19).trim();
+    saveMemory();
+
+    return "🐱 Tamam! En sevdiğin hayvanı aklıma yazdım.";
+}
     return null;
 }
 
