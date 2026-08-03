@@ -76,3 +76,73 @@ aci.addEventListener("click", () => {
 bolatinyo.addEventListener("click", () => {
     selectUser("Bolatinyo");
 });
+// ===========================
+// Hafıza
+// ===========================
+
+function remember(text) {
+
+    const original = text.trim();
+    const lower = original.toLowerCase();
+
+    if (lower.startsWith("adım ")) {
+        memory.name = original.substring(5).trim();
+        saveMemory();
+        return `💛 Tanıştığımıza sevindim <b>${memory.name}</b>!`;
+    }
+
+    if (lower === "ben kimim" || lower === "ben kimim?") {
+
+        if (memory.name) {
+            return `💛 Senin adın <b>${memory.name}</b>.`;
+        }
+
+        return "🥺 Bana henüz adını söylemedin.";
+    }
+
+    return null;
+}
+
+// ===========================
+// Mesaj Gönder
+// ===========================
+
+function sendMessage() {
+
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    addMessage("user", text);
+
+    input.value = "";
+
+    const memoryReply = remember(text);
+
+    setTimeout(() => {
+
+        if (memoryReply) {
+
+            addMessage("bal", memoryReply);
+
+        } else {
+
+            addMessage(
+                "bal",
+                "🐝 Seni duydum. Daha çok şey öğreniyorum. 💛"
+            );
+
+        }
+
+    }, 500);
+}
+
+sendButton.addEventListener("click", sendMessage);
+
+input.addEventListener("keydown", (e) => {
+
+    if (e.key === "Enter") {
+        sendMessage();
+    }
+
+});
