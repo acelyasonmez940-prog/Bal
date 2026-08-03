@@ -184,19 +184,22 @@ function sendMessage() {
     const memoryReply = remember(text);
 const aiReply = getResponse(text);
     setTimeout(() => {
+if (memoryReply) {
 
-        if (memoryReply) {
+    addMessage("bal", memoryReply);
 
-            addMessage("bal", memoryReply);
+} else if (aiReply) {
 
-        } else {
+    addMessage("bal", aiReply);
 
-            addMessage(
-                "bal",
-                "🐝 Seni duydum. Daha çok şey öğreniyorum. 💛"
-            );
+} else {
 
-        }
+    addMessage(
+        "bal",
+        "🐝 Seni duydum. 💛"
+    );
+
+}
 
     }, 500);
 }
