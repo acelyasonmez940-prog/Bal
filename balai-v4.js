@@ -103,7 +103,25 @@ memory.name =
 
         return "🥺 Bana henüz adını söylemedin.";
     }
+// En sevdiğim renk
+if (lower.startsWith("en sevdiğim renk ")) {
 
+    memory.favoriteColor = original.substring(17).trim();
+    saveMemory();
+
+    return "🎨 Tamam! En sevdiğin rengi aklıma yazdım.";
+}
+
+// Renk sorusu
+if (lower === "en sevdiğim renk ne" ||
+    lower === "en sevdiğim renk ne?") {
+
+    if (memory.favoriteColor) {
+        return `🎨 En sevdiğin renk <b>${memory.favoriteColor}</b>.`;
+    }
+
+    return "🥺 Bana henüz en sevdiğin rengi söylemedin.";
+}
     return null;
 }
 
