@@ -82,7 +82,22 @@ bolatinyo.addEventListener("click", () => {
 function randomItem(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
+const randomQuestions = [
+    "🌼 Bugün seni en çok ne gülümsetti?",
+    "🍯 Şu an aklından en çok ne geçiyor?",
+    "🐝 Bugün kendin için güzel bir şey yaptın mı?",
+    "💛 Bugün nasılsın gerçekten?",
+    "🌸 En sevdiğin mevsim hangisi?",
+    "☕ Şu an bir yerde olabilsen nerede olmak isterdin?",
+    "✨ Seni mutlu eden küçük bir şey söyle bana.",
+    "🎈 Bugün en çok neye güldün?",
+    "🌙 Son zamanlarda seni heyecanlandıran bir şey oldu mu?",
+    "🧸 Bir dilek hakkın olsa ne dilerdin?"
+];
 
+function askQuestion() {
+    return randomItem(randomQuestions);
+}
 function getResponse(text) {
 
     const lower = text.toLowerCase();
