@@ -78,7 +78,31 @@ bolatinyo.addEventListener("click", () => {
 // ===========================
 // Hafıza
 // ===========================
+function randomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
 
+function getResponse(text) {
+
+    const lower = text.toLowerCase();
+
+    for (const key in window.responses) {
+
+        const item = window.responses[key];
+
+        if (!item.keywords) continue;
+
+        for (const keyword of item.keywords) {
+
+            if (lower.includes(keyword.toLowerCase())) {
+                return randomItem(item.replies);
+            }
+
+        }
+    }
+
+    return null;
+}
 function remember(text) {
 
     const original = text.trim();
