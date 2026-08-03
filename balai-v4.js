@@ -106,23 +106,7 @@ function remember(text) {
 function sendMessage() {
 
     const text = input.value.trim();
-    // Adını öğren
-if (text.toLowerCase().startsWith("adım ")) {
-
-    memory.name = text.substring(5).trim();
-    saveMemory();
-
-    addMessage("user", text);
-    input.value = "";
-
-    setTimeout(() => {
-        addMessage(
-            "bal",
-            `💛 Tanıştığımıza sevindim <b>${memory.name}</b>! Seni artık hatırlayacağım.`
-        );
-    }, 500);
-
-    return;
+   
 }
     if (!text) return;
 
