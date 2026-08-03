@@ -82,18 +82,38 @@ bolatinyo.addEventListener("click", () => {
 function randomItem(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
-const randomQuestions = [
-    "🌼 Bugün seni en çok ne gülümsetti?",
-    "🍯 Şu an aklından en çok ne geçiyor?",
-    "🐝 Bugün kendin için güzel bir şey yaptın mı?",
-    "💛 Bugün nasılsın gerçekten?",
-    "🌸 En sevdiğin mevsim hangisi?",
-    "☕ Şu an bir yerde olabilsen nerede olmak isterdin?",
-    "✨ Seni mutlu eden küçük bir şey söyle bana.",
-    "🎈 Bugün en çok neye güldün?",
-    "🌙 Son zamanlarda seni heyecanlandıran bir şey oldu mu?",
-    "🧸 Bir dilek hakkın olsa ne dilerdin?"
-];
+const questionGroups = {
+
+    sad: [
+        "💛 İstersen bana anlatabilirsin.",
+        "🌼 Seni en çok ne üzdü?",
+        "🫂 Sana şu an en iyi ne gelir sence?",
+        "🐝 Biraz konuşmak ister misin?"
+    ],
+
+    happy: [
+        "🥹 Seni en çok ne mutlu etti?",
+        "✨ Bu güzel haberi biraz daha anlatır mısın?",
+        "🌸 Bugün en güzel anın neydi?",
+        "🎉 Bu mutluluğu kutlamak ister misin?"
+    ],
+
+    tired: [
+        "☕ Bugün seni en çok ne yordu?",
+        "🌙 Biraz dinlenmeye ne dersin?",
+        "🐝 Kendine bugün zaman ayırabildin mi?",
+        "💛 Yarın daha hafif bir gün olmasını isterim."
+    ],
+
+    general: [
+        "🌼 Bugün seni en çok ne gülümsetti?",
+        "🍯 Şu an aklından en çok ne geçiyor?",
+        "💛 Bugün nasılsın gerçekten?",
+        "☕ Bir yerde olabilsen nerede olmak isterdin?",
+        "🎈 Bugün en çok neye güldün?"
+    ]
+
+};
 
 function askQuestion() {
     return randomItem(randomQuestions);
