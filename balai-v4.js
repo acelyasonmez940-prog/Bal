@@ -15,7 +15,10 @@ const memory = JSON.parse(localStorage.getItem("balMemory")) || {
     favoriteAnimal: "",
     city: ""
 };
-
+let chatState = {
+    mode: "normal",
+    step: 0
+};
 function saveMemory() {
     localStorage.setItem("balMemory", JSON.stringify(memory));
 }
