@@ -1633,5 +1633,6 @@ animasyonlar: {
         "💛 Hoşuma gitti.",
         "🥳 Ne güzel bir sürpriz!"
     ]
+  }
+};
 
-},
