@@ -1,4 +1,4 @@
-const responses = {
+window.responses = {
 selam: {
   keywords: [
     "merhaba",
@@ -1635,5 +1635,3 @@ animasyonlar: {
     ]
 
 },
-
-export default responses;
