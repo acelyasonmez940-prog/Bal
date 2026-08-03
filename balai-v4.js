@@ -157,15 +157,10 @@ function sendMessage() {
     input.value = "";
 
     const memoryReply = remember(text);
-const aiReply = getResponse(text);
     setTimeout(() => {
 if (memoryReply) {
 
     addMessage("bal", memoryReply);
-
-} else if (aiReply) {
-
-    addMessage("bal", aiReply);
 
 } else {
 
@@ -175,7 +170,6 @@ if (memoryReply) {
     );
 
 }
-
     }, 500);
 }
 
