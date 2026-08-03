@@ -72,37 +72,62 @@ function remember(text) {
     const lower = original.toLowerCase();
 
     if (lower.startsWith("adım ")) {
-        memory.name = original.substring(5);
+        memory.name = original.substring(5).trim();
         saveMemory();
         return "💛 Tanıştığımıza sevindim " + memory.name + "!";
     }
 
     if (lower.startsWith("en sevdiğim renk ")) {
-        memory.favoriteColor = original.substring(17);
+        memory.favoriteColor = original.substring(17).trim();
         saveMemory();
         return "🎨 Tamam! En sevdiğin rengi unutmayacağım.";
     }
 
     if (lower.startsWith("en sevdiğim yemek ")) {
-        memory.favoriteFood = original.substring(18);
+        memory.favoriteFood = original.substring(18).trim();
         saveMemory();
         return "🍝 Bunu da aklıma yazdım.";
     }
 
     if (lower.startsWith("en sevdiğim hayvan ")) {
-        memory.favoriteAnimal = original.substring(19);
+        memory.favoriteAnimal = original.substring(19).trim();
         saveMemory();
         return "🐻 Ne güzel!";
     }
 
-    if (lower.startsWith("izmirliyim")) {
+    if (lower === "izmirliyim") {
         memory.city = "İzmir";
         saveMemory();
         return "🌼 İzmir'i aklımda tutacağım.";
     }
 
     return null;
+}
+
 function sendMessage() {
+
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    addMessage("user", text);
+    input.value = "";
+
+    const reply = remember(text);
+
+    setTimeout(() => {
+
+        if (reply) {
+            addMessage("bal", reply);
+        } else {
+            addMessage(
+                "bal",
+                "🐝 Seni duydum. Çok yakında sana cevap vermeyi de öğreneceğim. 💛"
+            );
+        }
+
+    }, 500);
+}
 
     const text = input.value.trim();
 
