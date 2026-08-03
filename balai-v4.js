@@ -311,6 +311,7 @@ function sendMessage() {
     const aiReply = getResponse(text);
     addTyping();
     setTimeout(() => {
+    removeTyping();
 if (memoryReply) {
 
     addMessage("bal", memoryReply);
