@@ -274,7 +274,7 @@ if (memoryReply) {
 } else {
 
     if (Math.random() < 0.35) {
-        addMessage("bal", askQuestion());
+addMessage("bal", askQuestion(text));
     } else {
         addMessage("bal", "🐝 Seni dinliyorum. 💛");
     }
