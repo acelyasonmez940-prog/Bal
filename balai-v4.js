@@ -1,6 +1,6 @@
 console.log("BAL V4 ÇALIŞTI");
 // ===========================
-// BAL HAFIZASI
+// Bal Hafızası
 // ===========================
 
 let memory = JSON.parse(localStorage.getItem("balMemory")) || {
@@ -102,27 +102,31 @@ function remember(text) {
     }
 
     return null;
-}
 function sendMessage() {
 
     const text = input.value.trim();
-   
-}
+
     if (!text) return;
 
     addMessage("user", text);
 
     input.value = "";
 
+    const reply = remember(text);
+
     setTimeout(() => {
 
-        addMessage(
-            "bal",
-            "🐝 Seni duydum. Çok yakında sana cevap vermeyi de öğreneceğim. 💛"
-        );
+        if (reply) {
+            addMessage("bal", reply);
+        } else {
+            addMessage(
+                "bal",
+                "🐝 Seni duydum. Çok yakında sana cevap vermeyi de öğreneceğim. 💛"
+            );
+        }
 
     }, 500);
-
+}
 }
 
 sendButton.addEventListener("click", sendMessage);
