@@ -78,13 +78,6 @@ function addMessage(type, text) {
 
     return "";
 }
-    const follow = getFollowQuestion(text);
-
-if (follow) {
-    addMessage("bal", follow);
-} else {
-    addMessage("bal", "🐝 Seni dinliyorum. 💛");
-}
 // ===========================
 // Kullanıcı Seçimi
 // ===========================
@@ -311,11 +304,11 @@ if (memoryReply) {
 
 } else {
 
-    if (Math.random() < 0.35) {
-addMessage("bal", askQuestion(text));
-    } else {
-      
-    }
+if (Math.random() < 0.35) {
+    addMessage("bal", askQuestion(text));
+} else {
+    addMessage("bal", "🐝 Seni dinliyorum. 💛");
+}
 
 }
     }, 500);
