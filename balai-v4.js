@@ -1,6 +1,7 @@
 // ===========================
 // BAL AI v4
 // ===========================
+const responses = window.responses;
 console.log("BAL AI v4 Başladı 🐝");
 
 // ===========================
