@@ -121,15 +121,6 @@ if (lower.startsWith("en sevdiğim renk ")) {
 
     return "🎨 Tamam! En sevdiğin rengi aklıma yazdım.";
 }
-// En sevdiğim yemek
-if (lower.startsWith("en sevdiğim yemek ")) {
-
-    memory.favoriteFood = original.substring(18).trim();
-    saveMemory();
-
-    return "🍕 Tamam! En sevdiğin yemeği aklıma yazdım.";
-}
-
 // Yemek sorusu
 if (lower === "en sevdiğim yemek ne" ||
     lower === "en sevdiğim yemek ne?") {
@@ -139,6 +130,15 @@ if (lower === "en sevdiğim yemek ne" ||
     }
 
     return "🥺 Bana henüz en sevdiğin yemeği söylemedin.";
+}
+
+// En sevdiğim yemek
+if (lower.startsWith("en sevdiğim yemek ")) {
+
+    memory.favoriteFood = original.substring(18).trim();
+    saveMemory();
+
+    return "🍕 Tamam! En sevdiğin yemeği aklıma yazdım.";
 }
     return null;
 }
