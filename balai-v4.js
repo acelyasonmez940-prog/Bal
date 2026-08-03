@@ -49,6 +49,25 @@ function addMessage(type, text) {
 
     messages.scrollTop = messages.scrollHeight;
 }
+function addTyping() {
+
+    messages.innerHTML += `
+        <div class="message bal" id="typing">
+            🐝 Bal yazıyor...
+        </div>
+    `;
+
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function removeTyping() {
+
+    const typing = document.getElementById("typing");
+
+    if (typing) {
+        typing.remove();
+    }
+}
  function getFollowQuestion(text) {
 
     const lower = text.toLowerCase();
