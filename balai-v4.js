@@ -286,11 +286,27 @@ const topicReplies = {
     ],
 
     relationship: [
-        "💛 İlişkiler bazen gerçekten karmaşık olabiliyor. Seni en çok ne düşündürüyor?",
-        "🌸 Bunu yaşarken kendini nasıl hissettin?",
-        "🫂 Onun davranışı seni kırmış gibi geliyor.",
-        "💛 İstersen birlikte konuşabiliriz."
-    ],
+    "💛 İlişkiler bazen gerçekten karmaşık olabiliyor. Seni en çok ne düşündürüyor?",
+    "🌸 Bunu yaşarken kendini nasıl hissettin?",
+    "🫂 Onun davranışı seni kırmış gibi geliyor.",
+    "💛 İstersen birlikte konuşabiliriz.",
+    "🌼 Bu durum uzun zamandır mı böyle devam ediyor?",
+    "💛 Onun adına da biraz üzüldüm. Kendine karşı çok acımasız davranıyor gibi.",
+    "🫂 Sen de ona destek olmaya çalışıyorsun gibi hissediyorum.",
+    "💛 İnsan bazen kendi kusurlarına başkalarının gördüğünden çok daha fazla takılabiliyor.",
+    "🌼 Sence onu en çok hangi düşünce üzüyor?",
+    "💛 Onunla bu konu hakkında hiç uzun uzun konuştunuz mu?",
+    "🫂 Böyle zamanlarda yanında olman bile ona iyi gelebilir.",
+    "💛 Umarım zamanla kendini olduğu gibi sevebilir.",
+    "🌸 Bu durum seni de üzmeye başlamış gibi hissediyorum.",
+    "🫂 Sen onun için elinden geleni yapıyorsun gibi görünüyor.",
+    "💛 Keşke kendini senin gördüğün gözlerle görebilse.",
+    "🌼 O bunları anlatırken sen ne hissediyorsun?",
+    "💛 Her insanın kusurlu olduğunu bazen kendimize hatırlatmamız gerekiyor.",
+    "🫂 Belki de en çok ihtiyacı olan şey yargılanmadan dinlenmek.",
+    "💛 Onun yanında olmaya devam etmen çok kıymetli.",
+    "🌸 Umarım zamanla kendine karşı daha nazik olmayı öğrenebilir."
+],
 
     appearance: [
         "💛 İnsan bazen kendine karşı çok acımasız olabiliyor.",
