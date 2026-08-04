@@ -448,6 +448,39 @@ function askQuestion(text) {
 
     return randomItem(questionGroups.general);
 }
+function detectIntent(text) {
+
+    const lower = text.toLowerCase();
+
+    if (
+        lower.includes("yardım") ||
+        lower.includes("yardımcı olur musun") ||
+        lower.includes("yardım eder misin")
+    ) {
+        return randomItem(intentReplies.help);
+    }
+
+    if (
+        lower.includes("sence") ||
+        lower.includes("ne yapmalıyım")
+    ) {
+        return randomItem(intentReplies.advice);
+    }
+
+    if (
+        lower.includes("teşekkür")
+    ) {
+        return randomItem(intentReplies.thanks);
+    }
+
+    if (
+        lower.includes("iyi geceler")
+    ) {
+        return randomItem(intentReplies.goodnight);
+    }
+
+    return null;
+}
 function getResponse(text) {
 
     const lower = text.toLowerCase();
