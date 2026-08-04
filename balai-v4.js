@@ -17,8 +17,17 @@ const memory = JSON.parse(localStorage.getItem("balMemory")) || {
 };
 let chatState = {
     mode: "normal",
-    step: 0
+    step: 0,
+    lastTopic: "",
+    lastMessage: "",
+    lastBotReply: ""
 };
+function saveChat(text, reply) {
+
+    chatState.lastMessage = text;
+    chatState.lastBotReply = reply;
+
+}
 function saveMemory() {
     localStorage.setItem("balMemory", JSON.stringify(memory));
 }
