@@ -480,6 +480,7 @@ function sendMessage() {
     const memoryReply = remember(text);
     const aiReply = getResponse(text);
     detectTopic(text);
+    continueConversation(text);
     addTyping();
     setTimeout(() => {
     removeTyping();
