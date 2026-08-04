@@ -28,6 +28,67 @@ function saveChat(text, reply) {
     chatState.lastBotReply = reply;
 chatState.lastTopic = chatState.mode;
 }
+function continueConversation(text) {
+
+    const lower = text.toLowerCase();
+
+    if (chatState.lastTopic === "relationship") {
+
+        if (
+            lower.includes("o") ||
+            lower.includes("kendisi") ||
+            lower.includes("hala") ||
+            lower.includes("sonra") ||
+            lower.includes("yine")
+        ) {
+            chatState.mode = "relationship";
+        }
+
+    }
+
+    if (chatState.lastTopic === "family") {
+
+        if (
+            lower.includes("annem") ||
+            lower.includes("babam") ||
+            lower.includes("ailem") ||
+            lower.includes("evde") ||
+            lower.includes("yine")
+        ) {
+            chatState.mode = "family";
+        }
+
+    }
+
+    if (chatState.lastTopic === "school") {
+
+        if (
+            lower.includes("ders") ||
+            lower.includes("sınav") ||
+            lower.includes("hoca") ||
+            lower.includes("not") ||
+            lower.includes("yine")
+        ) {
+            chatState.mode = "school";
+        }
+
+    }
+
+    if (chatState.lastTopic === "appearance") {
+
+        if (
+            lower.includes("tip") ||
+            lower.includes("saç") ||
+            lower.includes("yüz") ||
+            lower.includes("kilo") ||
+            lower.includes("yine")
+        ) {
+            chatState.mode = "appearance";
+        }
+
+    }
+
+}
 function saveMemory() {
     localStorage.setItem("balMemory", JSON.stringify(memory));
 }
