@@ -132,6 +132,117 @@ bolatinyo.addEventListener("click", () => {
 function randomItem(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
+const conversationTopics = {
+
+    family: [
+        "annem",
+        "annemle",
+        "babam",
+        "babamla",
+        "ailem",
+        "ailemle",
+        "abim",
+        "abi",
+        "ağabeyim",
+        "ablam",
+        "abla",
+        "kardeşim",
+        "ev",
+        "evde",
+        "karışıyorlar",
+        "karışıyor",
+        "tartıştım",
+        "kavga ettik",
+        "bağırdı",
+        "bağırıyor",
+        "küstük",
+        "beni anlamıyorlar",
+        "beni anlamıyor",
+        "destek olmuyorlar",
+        "destek olmuyor"
+    ],
+
+    relationship: [
+        "emirhan",
+        "sevgilim",
+        "erkek arkadaşım",
+        "kız arkadaşım",
+        "ilişki",
+        "ilişkimiz",
+        "ayrıldık",
+        "barıştık",
+        "kavga",
+        "tartıştık",
+        "yazmıyor",
+        "soğuk davranıyor",
+        "bana ilgisiz",
+        "beni sevmiyor",
+        "beni önemsemiyor"
+    ],
+
+    appearance: [
+        "tip",
+        "tipim",
+        "görünüş",
+        "görünüşüm",
+        "saç",
+        "saçım",
+        "diş",
+        "dişim",
+        "burnum",
+        "kafam",
+        "kulaklarım",
+        "yüzüm",
+        "çirkin",
+        "çirkinim",
+        "güzel değilim",
+        "yakışıklı değilim",
+        "özgüven",
+        "kiloluyum",
+        "şişmanım",
+        "zayıfım"
+    ],
+
+    school: [
+        "okul",
+        "okulda",
+        "ders",
+        "dersler",
+        "öğretmen",
+        "hoca",
+        "sınav",
+        "not",
+        "ödev",
+        "proje",
+        "çalışamadım"
+    ]
+
+};
+
+function detectTopic(text) {
+
+    const lower = text.toLowerCase();
+
+    for (const topic in conversationTopics) {
+
+        for (const word of conversationTopics[topic]) {
+
+            if (lower.includes(word)) {
+
+                chatState.mode = topic;
+                chatState.step = 1;
+
+                return topic;
+
+            }
+
+        }
+
+    }
+
+    return chatState.mode;
+
+}
 const questionGroups = {
 
     sad: [
