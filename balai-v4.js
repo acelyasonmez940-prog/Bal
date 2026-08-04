@@ -345,7 +345,33 @@ const questionGroups = {
     ]
 
 };
+const intentReplies = {
 
+help: [
+"💛 Tabii ki yardım ederim. Birlikte çözeriz.",
+"🌼 Elimden geldiğince yardımcı olurum.",
+"🫂 Anlat bana, birlikte bakalım."
+],
+
+advice: [
+"🌸 Birlikte düşünebiliriz.",
+"💛 Sence en çok seni zorlayan kısım ne?",
+"🐝 İstersen farklı yollar deneyebiliriz."
+],
+
+thanks: [
+"🥹 Ne demek.",
+"💛 Her zaman buradayım.",
+"🌼 Buna sevindim."
+],
+
+goodnight: [
+"🌙 İyi geceler. Umarım güzel dinlenirsin.",
+"💛 Tatlı rüyalar.",
+"🐝 Yarın yine konuşuruz."
+]
+
+};
 const topicReplies = {
 
     family: [
