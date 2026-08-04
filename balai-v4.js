@@ -423,16 +423,7 @@ function sendMessage() {
 
     const memoryReply = remember(text);
     const aiReply = getResponse(text);
-    const lower = text.toLowerCase();
-    if (
-    lower.includes("üzgün") ||
-    lower.includes("moralim bozuk") ||
-    lower.includes("kötüyüm") ||
-    lower.includes("canım sıkkın")
-) {
-    chatState.mode = "empathy";
-    chatState.step++;
-}
+    detectTopic(text);
     addTyping();
     setTimeout(() => {
     removeTyping();
