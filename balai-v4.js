@@ -464,18 +464,38 @@ if (memoryReply) {
 
 } else if (aiReply) {
 
- addMessage(
-    "bal",
-    aiReply + getFollowQuestion(text)
-);
+    let reply = aiReply;
+
+    if (topicReplies[chatState.mode]) {
+        reply += "\n\n" + randomItem(topicReplies[chatState.mode]);
+    }
+
+    const follow = getFollowQuestion(text);
+
+    if (follow) {
+        reply += follow;
+    }
+
+    addMessage("bal", reply);
 
 } else {
 
-if (Math.random() < 0.35) {
-    addMessage("bal", askQuestion(text));
-} else {
-    addMessage("bal", "🐝 Seni dinliyorum. 💛");
-}
+    if (topicReplies[chatState.mode]) {
+
+        addMessage(
+            "bal",
+            randomItem(topicReplies[chatState.mode])
+        );
+
+    } else if (Math.random() < 0.35) {
+
+        addMessage("bal", askQuestion(text));
+
+    } else {
+
+        addMessage("bal", "🐝 Seni dinliyorum. 💛");
+
+    }
 
 }
     }, 500);
