@@ -601,6 +601,7 @@ function sendMessage() {
     const aiReply = getResponse(text);
     detectTopic(text);
     continueConversation(text);
+    const intentReply = detectIntent(text);
     addTyping();
     setTimeout(() => {
     removeTyping();
