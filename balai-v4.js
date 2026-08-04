@@ -26,7 +26,7 @@ function saveChat(text, reply) {
 
     chatState.lastMessage = text;
     chatState.lastBotReply = reply;
-
+chatState.lastTopic = chatState.mode;
 }
 function saveMemory() {
     localStorage.setItem("balMemory", JSON.stringify(memory));
