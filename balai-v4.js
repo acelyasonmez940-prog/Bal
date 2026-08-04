@@ -275,7 +275,41 @@ const questionGroups = {
     ]
 
 };
+const questionGroups = {
+    ...
+};
 
+const topicReplies = {
+
+    family: [
+        "💛 Aile içinde böyle şeyler yaşamak gerçekten yorucu olabiliyor. Seni en çok kıran ne oldu?",
+        "🌼 Dilersen neler yaşandığını baştan anlatabilirsin.",
+        "🫂 Keşke seni biraz rahatlatabilsem. En çok neye üzüldün?",
+        "💛 Bazen en çok yakınlarımızın sözleri canımızı acıtabiliyor."
+    ],
+
+    relationship: [
+        "💛 İlişkiler bazen gerçekten karmaşık olabiliyor. Seni en çok ne düşündürüyor?",
+        "🌸 Bunu yaşarken kendini nasıl hissettin?",
+        "🫂 Onun davranışı seni kırmış gibi geliyor.",
+        "💛 İstersen birlikte konuşabiliriz."
+    ],
+
+    appearance: [
+        "💛 İnsan bazen kendine karşı çok acımasız olabiliyor.",
+        "🌼 Kendin hakkında böyle düşünmene sebep olan ne oldu?",
+        "🫂 Dış görünüşünden çok daha fazlasısın.",
+        "💛 Seni en çok hangi düşünce üzüyor?"
+    ],
+
+    school: [
+        "📚 Sınavlar bazen istediğimiz gibi gitmeyebilir.",
+        "💛 En çok zorlandığın ders hangisiydi?",
+        "🌼 Bir dahaki sınav için birlikte plan yapabiliriz.",
+        "🫂 Kendine çok yüklenme olur mu?"
+    ]
+
+};
 function askQuestion(text) {
 
     const lower = text.toLowerCase();
