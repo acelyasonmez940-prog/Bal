@@ -502,15 +502,18 @@ if (memoryReply) {
     }
 
     addMessage("bal", reply);
-
+saveChat(text, reply);
 } else {
 
-    if (topicReplies[chatState.mode]) {
+if (topicReplies[chatState.mode]) {
 
-        addMessage(
-            "bal",
-            randomItem(topicReplies[chatState.mode])
-        );
+    const topicReply = randomItem(topicReplies[chatState.mode]);
+
+    addMessage("bal", topicReply);
+
+    saveChat(text, topicReply);
+
+}
 
     } else if (Math.random() < 0.35) {
 
