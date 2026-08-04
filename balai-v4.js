@@ -608,6 +608,11 @@ function sendMessage() {
 if (memoryReply) {
 
     addMessage("bal", memoryReply);
+} else if (intentReply) {
+
+    addMessage("bal", intentReply);
+
+    saveChat(text, intentReply);
 
 } else if (aiReply) {
 
