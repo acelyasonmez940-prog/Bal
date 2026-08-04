@@ -275,9 +275,6 @@ const questionGroups = {
     ]
 
 };
-const questionGroups = {
-    ...
-};
 
 const topicReplies = {
 
