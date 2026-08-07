@@ -9,11 +9,18 @@ console.log("BAL AI v4 Başladı 🐝");
 // ===========================
 
 const memory = JSON.parse(localStorage.getItem("balMemory")) || {
-    name: "",
-    favoriteColor: "",
-    favoriteFood: "",
-    favoriteAnimal: "",
-    city: ""
+
+    profile: {
+        name: "",
+        favoriteColor: "",
+        favoriteFood: "",
+        favoriteAnimal: ""
+    },
+
+    memories: [],
+
+    conversation: []
+
 };
 let chatState = {
     mode: "normal",
