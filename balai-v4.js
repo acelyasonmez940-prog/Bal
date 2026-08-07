@@ -510,7 +510,7 @@ console.log(window.responses);
     return null;
 }
 function remember(text) {
-
+console.log("remember çalıştı:", text);
     const original = text.trim();
     const lower = original.toLowerCase();
 
