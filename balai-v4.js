@@ -517,17 +517,17 @@ function remember(text) {
     if (lower.startsWith("adım ")) {
 const name = original.substring(5).trim();
 
-memory.name =
+memory.profile.name =
     name.charAt(0).toUpperCase() +
     name.slice(1).toLowerCase();
         saveMemory();
-        return `💛 Tanıştığımıza sevindim <b>${memory.name}</b>!`;
+        return `💛 Tanıştığımıza sevindim <b>${memory.profile.name}</b>!`;
     }
 
     if (lower === "ben kimim" || lower === "ben kimim?") {
 
-        if (memory.name) {
-            return `💛 Senin adın <b>${memory.name}</b>.`;
+        if (memory.profile.name) {
+            return `💛 Senin adın <b>${memory.profile.name}</b>.`;
         }
 
         return "🥺 Bana henüz adını söylemedin.";
@@ -537,15 +537,15 @@ memory.name =
 if (lower === "en sevdiğim renk ne" ||
     lower === "en sevdiğim renk ne?") {
 
-    if (memory.favoriteColor) {
-        return `🎨 En sevdiğin renk <b>${memory.favoriteColor}</b>.`;
+   if (memory.profile.favoriteColor) {
+        return `🎨 En sevdiğin renk <b>${memory.profile.favoriteColor}</b>.`;
     }
 
     return "🥺 Bana henüz en sevdiğin rengi söylemedin.";
 }
 if (lower.startsWith("en sevdiğim renk ")) {
 
-    memory.favoriteColor = original.substring(17).trim();
+    memory.profile.favoriteColor = original.substring(17).trim();
     saveMemory();
 
     return "🎨 Tamam! En sevdiğin rengi aklıma yazdım.";
@@ -564,7 +564,7 @@ if (lower === "en sevdiğim yemek ne" ||
 // En sevdiğim yemek
 if (lower.startsWith("en sevdiğim yemek ")) {
 
-    memory.favoriteFood = original.substring(18).trim();
+    memory.profile.favoriteFood = original.substring(18).trim();
     saveMemory();
 
     return "🍕 Tamam! En sevdiğin yemeği aklıma yazdım.";
@@ -582,7 +582,7 @@ if (lower === "en sevdiğim hayvan ne" ||
 
 if (lower.startsWith("en sevdiğim hayvan ")) {
 
-    memory.favoriteAnimal = original.substring(19).trim();
+     memory.profile.favoriteAnimal = original.substring(19).trim();
     saveMemory();
 
     return "🐱 Tamam! En sevdiğin hayvanı aklıma yazdım.";
