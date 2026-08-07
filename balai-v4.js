@@ -622,7 +622,7 @@ if (lower.startsWith("en sevdiğim hayvan ")) {
 // ===========================
 
 function sendMessage() {
-
+alert("SENDMESSAGE ÇALIŞTI");
     const text = input.value.trim();
 
     if (!text) return;
