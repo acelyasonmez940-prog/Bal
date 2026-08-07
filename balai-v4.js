@@ -2,8 +2,8 @@
 // BAL AI v4
 // ===========================
 const responses = window.responses;
-console.log("BAL AI v4 Başladı 🐝");
-
+console.log("🔥 BAL AI V4 - 05:30 TEST");
+alert("BAL AI YÜKLENDİ");
 // ===========================
 // Hafıza
 // ===========================
