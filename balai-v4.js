@@ -631,7 +631,9 @@ alert("SENDMESSAGE ÇALIŞTI");
 
     input.value = "";
 
-    const memoryReply = remember(text);
+    alert("remember'a gidiyor");
+const memoryReply = remember(text);
+alert("remember'dan çıktı");
     const aiReply = getResponse(text);
     detectTopic(text);
     continueConversation(text);
